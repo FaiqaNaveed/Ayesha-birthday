@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A little birthday surprise for Farwa, from Faiqa.">
+<meta property="og:title" content="Happy Birthday, Farwa! 🎂">
+<meta property="og:description" content="Three little surprises, from Faiqa 💝">
+<meta property="og:type" content="website">
+<title>Happy Birthday, Farwa! 🎂</title>
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --pink:#ff4d94;      /* primary */
+    --rose:#e0407e;      /* deeper accent */
+    --blush:#ffe3ef;     /* soft fill */
+    --blush-2:#fff5f9;   /* softest fill */
+    --line:#ffd0e2;      /* borders */
+    --gold:#e8a33d;      /* warm accent */
+    --ink:#5c1436;       /* headings */
+    --body:#8a5570;      /* body text */
+    --muted:#b3778f;     /* hints */
+  }
+  html,body{height:100%}
+  body{
+    margin:0; min-height:100%; color:var(--body);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(900px 560px at 12% -8%, #ffd9e8 0%, transparent 62%),
+      radial-gradient(760px 520px at 92% 2%, #ffe6d8 0%, transparent 58%),
+      radial-gradient(700px 500px at 50% 108%, #ffdfee 0%, transparent 60%),
+      linear-gradient(180deg,#ffffff 0%,#fffafc 45%,#fff2f7 100%);
+    background-attachment:fixed;
+    overflow-x:hidden;
+  }
+  /* ---------- background layers ---------- */
+  #sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .star{position:absolute;border-radius:50%;background:var(--pink);animation:tw 3s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.10;transform:scale(.7)}50%{opacity:.55;transform:scale(1.15)}}
+  /* above the surprise overlay (z 60) so confetti & fireworks stay visible */
+  #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:65}
+
+  /* ---------- page ---------- */
+  main{position:relative;z-index:5;max-width:920px;margin:0 auto;padding:56px 20px 60px;text-align:center}
+  .date{
+    display:inline-block;letter-spacing:.28em;text-transform:uppercase;font-size:12px;
+    padding:8px 16px;border:1px solid var(--line);border-radius:999px;
+    background:#fff;color:var(--rose);margin:0 0 22px;
+    box-shadow:0 8px 22px -14px var(--pink)
+  }
+  h1{
+    font-size:clamp(38px,9vw,76px);line-height:1.02;margin:0 0 10px;font-weight:800;color:var(--ink)
+  }
+  h1 span{
+    display:block;margin-top:6px;
+    background:linear-gradient(92deg,#ff8fbc,var(--pink) 45%,#c2185b);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-size:clamp(48px,13vw,104px);font-family:Georgia,"Times New Roman",serif;font-style:italic
+  }
+  .from{
+    margin:6px 0 0;font-family:Georgia,"Times New Roman",serif;font-style:italic;
+    font-size:clamp(19px,4.6vw,26px);color:var(--rose)
+  }
+  .from b{font-style:normal;font-weight:800;color:var(--pink)}
+  .from .heart{display:inline-block;animation:beat 1.6s ease-in-out infinite;color:var(--pink)}
+  @keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.28)}60%{transform:scale(1)}}
+  .sub{color:var(--body);max-width:520px;margin:14px auto 0;font-size:16px;line-height:1.6}
+
+  /* ---------- best friend section ---------- */
+  .bff{margin:60px auto 0;max-width:820px}
+  .bff-rule{
+    display:flex;align-items:center;gap:14px;justify-content:center;
+    color:var(--rose);letter-spacing:.26em;text-transform:uppercase;font-size:11px;font-weight:700
+  }
+  .bff-rule::before,.bff-rule::after{
+    content:"";height:1px;flex:0 1 90px;
+    background:linear-gradient(90deg,transparent,var(--line),transparent)
+  }
+  .bff h2{
+    margin:14px 0 6px;color:var(--ink);font-size:clamp(24px,5.4vw,34px);
+    font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400
+  }
+  .bff .lead{color:var(--body);margin:0 auto 30px;max-width:460px;font-size:15px;line-height:1.65}
+  .bff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}
+  @media(max-width:820px){.bff-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.bff-grid{grid-template-columns:1fr}}
+  .bff-card{
+    display:flex;gap:13px;align-items:flex-start;
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 16px 15px;
+    box-shadow:0 12px 28px -24px rgba(224,64,126,.9);
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease
+  }
+  .bff-card:hover{transform:translateY(-5px);border-color:#ffb8d4;box-shadow:0 18px 34px -22px rgba(224,64,126,.85)}
+  .bff-card .ico{
+    flex:0 0 38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:19px;
+    background:var(--blush)
+  }
+  .bff-card b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
+  .bff-card span.txt{display:block;color:var(--body);font-size:13.5px;line-height:1.6}
+  .bff-seal{
+    margin:30px auto 0;display:inline-block;padding:16px 26px;border-radius:20px;
+    background:linear-gradient(160deg,#fff,#fff2f8);border:1px dashed #ffb8d4;
+    color:var(--ink);font-size:15px;line-height:1.7;max-width:520px
+  }
+  .bff-seal em{color:var(--rose);font-style:normal;font-weight:700}
+  .bff-sign{
+    display:block;margin-top:10px;font-family:Georgia,"Times New Roman",serif;font-style:italic;
+    font-size:19px;color:var(--pink)
+  }
+
+  /* ---------- gift cards ---------- */
+  .gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:44px 0 22px}
+  @media(max-width:680px){.gifts{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+  .gift{
+    position:relative;cursor:pointer;color:var(--ink);font:inherit;text-align:center;
+    padding:26px 16px 22px;border-radius:22px;border:1px solid var(--line);
+    background:#fff;box-shadow:0 14px 34px -22px rgba(224,64,126,.55);
+    transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,border-color .28s;
+    overflow:hidden;
+  }
+  .gift::after{
+    content:"";position:absolute;inset:-40% -10% auto;height:70%;
+    background:linear-gradient(180deg,rgba(255,77,148,.10),transparent);
+    transform:translateY(-100%);transition:transform .5s
+  }
+  .gift:focus{outline:none}
+  .gift:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+  .gift:hover{transform:translateY(-10px) rotate(-1.5deg);border-color:var(--pink)}
+  .gift:hover::after{transform:translateY(0)}
+  .gift.g1:hover{box-shadow:0 24px 44px -20px var(--pink)}
+  .gift.g2:hover{box-shadow:0 24px 44px -20px #ff85b3}
+  .gift.g3:hover{box-shadow:0 24px 44px -20px #f0a8c6}
+  .gift .emoji{font-size:52px;display:block;animation:bob 2.6s ease-in-out infinite}
+  .gift.g2 .emoji{animation-delay:.4s}
+  .gift.g3 .emoji{animation-delay:.8s}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}
+  .gift b{display:block;margin-top:12px;font-size:17px;color:var(--ink)}
+  .gift small{display:block;margin-top:4px;color:var(--muted);font-size:12.5px;letter-spacing:.06em}
+  .gift.done{background:var(--blush-2);border-color:var(--line);box-shadow:none}
+  .gift.done .emoji{opacity:.7}
+  .gift.done small{color:var(--rose);font-weight:600}
+  .progress{color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* ---------- surprise stage ---------- */
+  .stage{
+    position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:20px;
+    background:rgba(255,236,244,.82);backdrop-filter:blur(10px);animation:fade .35s ease
+  }
+  .stage[hidden]{display:none}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .panel{
+    position:relative;width:min(560px,100%);max-height:88vh;overflow:auto;
+    border-radius:26px;padding:34px 26px 30px;text-align:center;
+    border:1px solid var(--line);
+    background:linear-gradient(160deg,#ffffff 0%,#fff4f9 100%);
+    box-shadow:0 40px 80px -34px rgba(180,30,90,.45);animation:pop .5s cubic-bezier(.2,.9,.3,1.35)
+  }
+  @keyframes pop{from{opacity:0;transform:translateY(28px) scale(.9)}to{opacity:1;transform:none}}
+  .panel h2{margin:0 0 6px;font-size:26px;color:var(--ink)}
+  .panel .tag{color:var(--pink);letter-spacing:.2em;text-transform:uppercase;font-size:11px;margin:0 0 16px;font-weight:700}
+  .panel p{color:var(--body);line-height:1.75;margin:12px 0 0;font-size:15.5px}
+  .close{
+    position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;cursor:pointer;
+    border:1px solid var(--line);background:#fff;color:var(--rose);font-size:15px
+  }
+  .close:hover{background:var(--blush);border-color:var(--pink)}
+  .btn{
+    margin-top:22px;cursor:pointer;font:inherit;font-weight:700;color:#fff;
+    padding:12px 24px;border:0;border-radius:999px;
+    background:linear-gradient(92deg,#ff7fb0,var(--pink));
+    box-shadow:0 14px 28px -12px var(--pink)
+  }
+  .btn:hover{filter:brightness(1.06)}
+
+  /* ---------- scene 1: flip card ---------- */
+  .card{width:220px;height:150px;margin:18px auto 6px;perspective:900px;cursor:pointer}
+  .card-in{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.3,.8,.2,1);transform-style:preserve-3d}
+  .card.open .card-in{transform:rotateY(180deg)}
+  .face{
+    position:absolute;inset:0;border-radius:16px;display:grid;place-items:center;
+    backface-visibility:hidden;font-size:14px;padding:14px;line-height:1.6;
+    box-shadow:0 16px 34px -20px rgba(224,64,126,.7)
+  }
+  .front{background:linear-gradient(140deg,#ff8fbc,var(--pink));font-size:44px;border:1px solid #ff9ec4}
+  .back{background:#fff;color:var(--ink);transform:rotateY(180deg);font-weight:600;border:1px solid var(--line)}
+
+  /* ---------- scene 2: cake ---------- */
+  .cake-wrap{margin:26px auto 8px;width:250px}
+  .candles{display:flex;justify-content:center;gap:26px;align-items:flex-end;height:64px}
+  .candle{
+    position:relative;width:10px;height:46px;border-radius:4px;cursor:pointer;
+    background:repeating-linear-gradient(45deg,#fff 0 5px,var(--pink) 5px 10px);
+    border:1px solid var(--line)
+  }
+  .flame{
+    position:absolute;left:50%;top:-21px;width:14px;height:22px;margin-left:-8px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    background:radial-gradient(circle at 50% 70%,#fff8e1 0,#ffc233 38%,#ff7b39 74%,rgba(255,110,0,0) 100%);
+    box-shadow:0 0 22px 6px rgba(255,160,40,.45);animation:flick .28s ease-in-out infinite alternate
+  }
+  @keyframes flick{from{transform:scale(.9) translateY(1px)}to{transform:scale(1.12) translateY(-2px)}}
+  .candle.out .flame{opacity:0;transform:scale(.2);box-shadow:none;transition:.4s}
+  .candle.out::before{content:"💨";position:absolute;left:-4px;top:-26px;font-size:14px;animation:puff .9s ease-out forwards}
+  @keyframes puff{to{opacity:0;transform:translateY(-22px) scale(1.5)}}
+  .tier{border-radius:12px 12px 8px 8px;margin:0 auto}
+  .t1{
+    width:150px;height:38px;position:relative;border-radius:14px 14px 4px 4px;
+    background:linear-gradient(#ffffff,#ffe3ef);border:1px solid var(--line);
+    box-shadow:0 10px 22px -16px rgba(224,64,126,.8)
+  }
+  .t1::after{content:"";position:absolute;inset:auto -1px -9px;height:16px;border-radius:0 0 50% 50%/0 0 100% 100%;background:#fff;border:1px solid var(--line);border-top:0}
+  .t2{
+    width:210px;height:56px;margin-top:8px;position:relative;
+    background:linear-gradient(#ff8fbc,var(--pink));border:1px solid #ff9ec4;
+    box-shadow:0 14px 26px -18px rgba(224,64,126,.9)
+  }
+  .t2::after{content:"";position:absolute;inset:auto -1px -10px;height:18px;border-radius:0 0 50% 50%/0 0 100% 100%;background:#ffd3e5;border:1px solid #ffc0da;border-top:0}
+  .plate{width:250px;height:12px;margin:12px auto 0;border-radius:999px;background:#f6d6e3}
+  .blow{color:var(--rose);font-size:13.5px;letter-spacing:.08em;margin-top:20px;min-height:22px;font-weight:600}
+
+  /* ---------- balloons ---------- */
+  .balloon{
+    position:fixed;bottom:-140px;width:44px;height:56px;border-radius:50% 50% 46% 46%;
+    z-index:63;pointer-events:none;animation:rise linear forwards
+  }
+  .balloon::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:70px;background:rgba(224,64,126,.35)}
+  @keyframes rise{to{transform:translateY(-118vh) rotate(14deg);opacity:.15}}
+
+  /* ---------- scene 3: letter ---------- */
+  .letter{
+    margin-top:18px;text-align:left;background:#fffafd;border:1px dashed #ffb8d4;
+    border-radius:16px;padding:20px;min-height:200px;font-size:15.5px;line-height:1.85;
+    color:var(--ink);white-space:pre-wrap
+  }
+  .cursor{color:var(--pink)}
+
+  /* ---------- finale banner ---------- */
+  .finale{
+    position:fixed;left:50%;top:26px;transform:translateX(-50%);z-index:70;max-width:92vw;
+    padding:14px 26px;border-radius:999px;font-weight:700;color:#fff;text-align:center;
+    background:linear-gradient(92deg,#ff7fb0,var(--pink) 60%,#d81b60);
+    box-shadow:0 20px 40px -16px rgba(216,27,96,.6);
+    animation:drop .6s cubic-bezier(.2,.9,.3,1.4)
+  }
+  @keyframes drop{from{opacity:0;transform:translate(-50%,-40px)}to{opacity:1;transform:translate(-50%,0)}}
+  footer{position:relative;z-index:5;text-align:center;color:var(--muted);font-size:12px;padding-bottom:26px}
+</style>
+</head>
+<body>
+<div id="sky"></div>
+<canvas id="fx"></canvas>
+
+<main>
+  <p class="date">🎈 9 September 🎈</p>
+  <h1>Happy Birthday,<span>Farwa</span></h1>
+  <p class="from">from <b>Faiqa</b> <span class="heart">♥</span></p>
+  <p class="sub">I hid three little surprises on this page just for you. Tap each gift — every one is different 💝</p>
+
+  <div class="gifts">
+    <button class="gift g1" data-scene="1"><span class="emoji">🎁</span><b>Surprise One</b><small>tap to unwrap</small></button>
+    <button class="gift g2" data-scene="2"><span class="emoji">🎂</span><b>Surprise Two</b><small>tap to unwrap</small></button>
+    <button class="gift g3" data-scene="3"><span class="emoji">✨</span><b>Surprise Three</b><small>tap to unwrap</small></button>
+  </div>
+
+  <p class="progress" id="progress">0 of 3 unwrapped</p>
+
+  <section class="bff">
+    <p class="bff-rule">Best friends</p>
+    <h2>Why you are my favourite person</h2>
+    <p class="lead">Every year I get one official excuse to say all of this out loud. So here it is.</p>
+
+    <div class="bff-grid">
+      <div class="bff-card">
+        <div class="ico">😂</div>
+        <div><b>You laugh at my worst jokes</b><span class="txt">And then immediately tell a worse one. Perfect system.</span></div>
+      </div>
+      <div class="bff-card">
+        <div class="ico">📞</div>
+        <div><b>Calls that solve nothing</b><span class="txt">Three hours, no conclusion, somehow everything feels better.</span></div>
+      </div>
+      <div class="bff-card">
+        <div class="ico">🛟</div>
+        <div><b>You always show up</b><span class="txt">Every time it mattered, you were already there.</span></div>
+      </div>
+      <div class="bff-card">
+        <div class="ico">🤫</div>
+        <div><b>My secrets are safe</b><span class="txt">Safer with you than they ever were with me.</span></div>
+      </div>
+      <div class="bff-card">
+        <div class="ico">🍟</div>
+        <div><b>Zero judgement, always</b><span class="txt">Shared food, terrible plans, no questions asked.</span></div>
+      </div>
+      <div class="bff-card">
+        <div class="ico">💪</div>
+        <div><b>You believe in me loudly</b><span class="txt">Usually louder than I manage to believe in myself.</span></div>
+      </div>
+    </div>
+
+    <div class="bff-seal">
+      Some people are friends. You are <em>family I got to choose</em>.
+      Thank you for every ordinary day you quietly made better.
+      <span class="bff-sign">— always yours, Faiqa ♥</span>
+    </div>
+  </section>
+</main>
+
+<footer>made with a lot of &hearts; by Faiqa &middot; for Farwa &middot; 9 September</footer>
+
+<div class="stage" id="stage" hidden>
+  <div class="panel" id="panel">
+    <button class="close" id="close" aria-label="Close">✕</button>
+    <div id="scene"></div>
+  </div>
+</div>
+
+<script>
+/* ============ soft pink twinkles ============ */
+(function(){
+  var sky=document.getElementById('sky'),f=document.createDocumentFragment();
+  for(var i=0;i<90;i++){
+    var s=document.createElement('div');s.className='star';
+    var r=Math.random()*3.2+1.4;
+    s.style.cssText='width:'+r+'px;height:'+r+'px;left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*3).toFixed(2)+'s';
+    f.appendChild(s);
+  }
+  sky.appendChild(f);
+})();
+
+/* ============ particle engine ============ */
+var cv=document.getElementById('fx'),ctx=cv.getContext('2d');
+var W=0,H=0,DPR=1;
+function sizeCanvas(){
+  DPR=Math.min(window.devicePixelRatio||1,2);
+  W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;
+  cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';
+}
+sizeCanvas();addEventListener('resize',sizeCanvas);
+
+var P=[];
+/* pinks + a warm gold — all chosen to read clearly on a white background */
+var PALETTE=['#ff4d94','#ff8fbc','#e0407e','#d81b60','#ffb3d1','#e8a33d','#c2185b'];
+function pick(a){return a[(Math.random()*a.length)|0]}
+
+function confetti(x,y,n,power){
+  n=n||90;power=power||13;
+  for(var i=0;i<n;i++){
+    var a=Math.random()*Math.PI*2,sp=Math.random()*power+2;
+    P.push({t:'c',x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-4,g:0.24,
+      w:(Math.random()*7+4)*DPR,h:(Math.random()*4+3)*DPR,
+      r:Math.random()*6,vr:(Math.random()-0.5)*0.4,c:pick(PALETTE),life:1,dec:0.006+Math.random()*0.006});
+  }
+}
+function spark(x,y,n,col){
+  n=n||70;
+  for(var i=0;i<n;i++){
+    var a=Math.random()*Math.PI*2,sp=Math.random()*7+1.5;
+    P.push({t:'s',x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,g:0.09,
+      s:(Math.random()*2.2+1)*DPR,c:col||pick(PALETTE),life:1,dec:0.012+Math.random()*0.014});
+  }
+}
+/* launched from the left/right margins so they frame the card
+   instead of covering the text on the light background */
+function firework(wide){
+  var x = wide
+    ? (0.10+Math.random()*0.80)*W
+    : (Math.random()<0.5 ? (0.03+Math.random()*0.19) : (0.78+Math.random()*0.19))*W;
+  var y=(0.10+Math.random()*0.45)*H, c=pick(PALETTE);
+  spark(x,y,55,c);
+  setTimeout(function(){spark(x,y,24,'#ffb3d1')},90);
+}
+(function loop(){
+  ctx.clearRect(0,0,W,H);
+  for(var i=P.length-1;i>=0;i--){
+    var p=P[i];
+    p.vy+=p.g;p.vx*=0.995;p.x+=p.vx*DPR;p.y+=p.vy*DPR;p.life-=p.dec;
+    if(p.life<=0||p.y>H+60){P.splice(i,1);continue}
+    ctx.globalAlpha=Math.max(p.life,0);
+    if(p.t==='c'){
+      p.r+=p.vr;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);
+      ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+    }else{
+      ctx.strokeStyle=p.c;ctx.lineWidth=p.s;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(p.x-p.vx*2*DPR,p.y-p.vy*2*DPR);ctx.lineTo(p.x,p.y);ctx.stroke();
+    }
+  }
+  ctx.globalAlpha=1;
+  requestAnimationFrame(loop);
+})();
+
+function balloons(n){
+  n=n||16;
+  for(var i=0;i<n;i++){
+    var b=document.createElement('div');b.className='balloon';
+    var c=pick(PALETTE);
+    b.style.cssText='left:'+(Math.random()*92+2)+'vw;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.75),'+c+');'+
+      'animation-duration:'+(Math.random()*4+6).toFixed(1)+'s;animation-delay:'+(Math.random()*1.6).toFixed(2)+'s;'+
+      'transform:scale('+(Math.random()*0.6+0.8).toFixed(2)+')';
+    document.body.appendChild(b);
+    (function(el){setTimeout(function(){el.remove()},13000)})(b);
+  }
+}
+
+/* ============ scenes ============ */
+var stage=document.getElementById('stage'),sceneEl=document.getElementById('scene');
+var opened={},openedCount=0,timers=[];
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function every(fn,ms){timers.push(setInterval(fn,ms))}
+function clearTimers(){for(var i=0;i<timers.length;i++){clearTimeout(timers[i]);clearInterval(timers[i])}timers=[]}
+
+var scenes={
+  '1':function(){
+    sceneEl.innerHTML=
+      '<p class="tag">Surprise one</p>'+
+      '<h2>A confetti storm 🎉</h2>'+
+      '<p>Because a day this good deserves noise, colour and a little bit of mess.</p>'+
+      '<div class="card" id="card"><div class="card-in">'+
+        '<div class="face front">💌</div>'+
+        '<div class="face back">Farwa, you are the friend who makes ordinary days feel like celebrations. Today it is your turn. 🥳<br><span style="color:#e0407e">— Faiqa</span></div>'+
+      '</div></div>'+
+      '<p style="font-size:13px;color:#b3778f">(tap the envelope to open it)</p>'+
+      '<button class="btn" id="more">More confetti!</button>';
+    confetti(innerWidth/2*DPR, innerHeight*0.35*DPR, 170, 16);
+    every(function(){confetti(Math.random()*W, -20, 26, 6)}, 700);
+    var card=document.getElementById('card');
+    card.onclick=function(){
+      card.classList.toggle('open');
+      var b=card.getBoundingClientRect();
+      confetti((b.left+b.width/2)*DPR,(b.top+b.height/2)*DPR,80,11);
+    };
+    document.getElementById('more').onclick=function(e){
+      var b=e.target.getBoundingClientRect();
+      confetti((b.left+b.width/2)*DPR,b.top*DPR,150,15);
+    };
+  },
+  '2':function(){
+    sceneEl.innerHTML=
+      '<p class="tag">Surprise two</p>'+
+      '<h2>Your cake is served 🎂</h2>'+
+      '<p>Three candles, three wishes. Tap each flame to blow it out.</p>'+
+      '<div class="cake-wrap">'+
+        '<div class="candles">'+
+          '<div class="candle"><div class="flame"></div></div>'+
+          '<div class="candle"><div class="flame"></div></div>'+
+          '<div class="candle"><div class="flame"></div></div>'+
+        '</div>'+
+        '<div class="tier t1"></div><div class="tier t2"></div><div class="plate"></div>'+
+      '</div>'+
+      '<div class="blow" id="blow">0 / 3 candles out</div>';
+    var blow=document.getElementById('blow');
+    var cs=[].slice.call(sceneEl.querySelectorAll('.candle'));
+    cs.forEach(function(c){
+      c.onclick=function(){
+        if(c.className.indexOf('out')>-1)return;
+        c.className+=' out';
+        var b=c.getBoundingClientRect();
+        spark((b.left+b.width/2)*DPR,b.top*DPR,26,'#e8a33d');
+        var n=cs.filter(function(x){return x.className.indexOf('out')>-1}).length;
+        blow.textContent=n+' / 3 candles out';
+        if(n===3){
+          blow.innerHTML='<b style="color:#d81b60">All three wishes are officially on their way ✨</b>';
+          confetti(innerWidth/2*DPR, innerHeight*0.4*DPR, 200, 17);
+          balloons(20);
+        }
+      };
+    });
+  },
+  '3':function(){
+    sceneEl.innerHTML=
+      '<p class="tag">Surprise three</p>'+
+      '<h2>Fireworks &amp; a little letter 🎆</h2>'+
+      '<div class="letter" id="letter"></div>'+
+      '<button class="btn" id="again">Read it again</button>';
+    every(firework, 1300);
+    balloons(12);
+    var text = 'Dear Farwa,\n\nHappy 9th of September. 🎈\n\nThank you for the laughs at the worst possible moments, for showing up when it actually mattered, and for being completely impossible to replace.\n\nMay this year be kind to you: soft mornings, big wins, zero drama, and every single wish you make today.\n\nYou deserve all of it, and then a little extra.\n\nHappy birthday, best friend.\n\n— with love, always,\nFaiqa ♥';
+    var el=document.getElementById('letter');
+    /* Driven by the wall clock, not by one-char-per-tick and not by rAF:
+       - one char per tick gets throttled to a crawl while the fireworks run
+       - rAF stops completely whenever the page isn't painting
+       Computing the count from elapsed real time means a slow tick only makes
+       it less smooth, never slower, and it always reaches the end. */
+    var CPS=46; /* characters per second */
+    function type(){
+      if(el._t)clearInterval(el._t);
+      var start=Date.now(),shown=0;
+      el.textContent='';
+      var cur=document.createElement('span');cur.className='cursor';cur.textContent='|';
+      el.appendChild(cur);
+      el._t=setInterval(function(){
+        if(!el.isConnected){clearInterval(el._t);return}   /* scene swapped out */
+        var n=Math.min(text.length,Math.floor((Date.now()-start)/1000*CPS));
+        if(n>shown){el.insertBefore(document.createTextNode(text.slice(shown,n)),cur);shown=n}
+        if(shown>=text.length){clearInterval(el._t);if(cur.parentNode)cur.remove()}
+      },33);
+      timers.push(el._t);
+    }
+    type();
+    document.getElementById('again').onclick=type;
+  }
+};
+
+function openScene(n){
+  clearTimers();
+  scenes[n]();
+  stage.hidden=false;
+  if(!opened[n]){
+    opened[n]=true;openedCount++;
+    var card=document.querySelector('.gift[data-scene="'+n+'"]');
+    card.className+=' done';
+    card.querySelector('small').textContent='unwrapped ✓';
+    document.getElementById('progress').textContent=openedCount+' of 3 unwrapped';
+    /* hold the finale until the letter has finished typing, so it stays readable.
+       kept off the `timers` list so closing a scene cannot cancel it. */
+    if(openedCount===3){finalePending=true;finaleTimer=setTimeout(finale,12500)}
+  }
+}
+function closeScene(){
+  clearTimers();
+  stage.hidden=true;
+  if(finalePending)finale();   /* closing the last surprise triggers it early */
+}
+
+var finaleDone=false,finalePending=false,finaleTimer=null;
+function finale(){
+  finalePending=false;clearTimeout(finaleTimer);
+  if(finaleDone)return;finaleDone=true;
+  var b=document.createElement('div');b.className='finale';
+  b.textContent='🎉 All three unwrapped — you are officially celebrated, Farwa!';
+  document.body.appendChild(b);
+  for(var i=0;i<6;i++){
+    (function(k){later(function(){confetti(Math.random()*W,Math.random()*H*0.5,90,15);firework(true)},k*350)})(i);
+  }
+  later(function(){balloons(24)},400);
+  later(function(){b.remove()},9000);
+}
+
+[].slice.call(document.querySelectorAll('.gift')).forEach(function(g){
+  g.addEventListener('click',function(){
+    var r=g.getBoundingClientRect();
+    confetti((r.left+r.width/2)*DPR,(r.top+r.height/2)*DPR,50,10);
+    openScene(g.getAttribute('data-scene'));
+  });
+});
+document.getElementById('close').onclick=closeScene;
+stage.addEventListener('click',function(e){if(e.target===stage)closeScene()});
+addEventListener('keydown',function(e){if(e.key==='Escape')closeScene()});
+
+/* gentle welcome */
+addEventListener('load',function(){
+  confetti(innerWidth*0.5*DPR, innerHeight*0.22*DPR, 120, 13);
+  balloons(8);
+});
+</script>
+</body>
+</html>
