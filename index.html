@@ -4,40 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="A little birthday surprise for Farwa, from Faiqa.">
-<meta property="og:title" content="Happy Birthday, Farwa! 🎂">
-<meta property="og:description" content="Three little surprises, from Faiqa 💝">
+<meta name="description" content="A little birthday surprise for Ayesha, from her big sister Faiqa.">
+<meta property="og:title" content="Happy Birthday, Ayesha! 🎂💜">
+<meta property="og:description" content="Six little surprises for my little sister 💜">
 <meta property="og:type" content="website">
-<title>Happy Birthday, Farwa! 🎂</title>
+<title>Happy Birthday, Ayesha! 🎂💜</title>
 <style>
   *{box-sizing:border-box}
   :root{
-    --pink:#ff4d94;      /* primary */
-    --rose:#e0407e;      /* deeper accent */
-    --blush:#ffe3ef;     /* soft fill */
-    --blush-2:#fff5f9;   /* softest fill */
-    --line:#ffd0e2;      /* borders */
-    --gold:#e8a33d;      /* warm accent */
-    --ink:#5c1436;       /* headings */
-    --body:#8a5570;      /* body text */
-    --muted:#b3778f;     /* hints */
+    --purple:#a855f7;      /* primary */
+    --grape:#7c3aed;      /* deeper accent */
+    --lilac:#f3e8ff;     /* soft fill */
+    --lilac-2:#faf5ff;   /* softest fill */
+    --line:#e9d5ff;      /* borders */
+    --gold:#fbbf24;      /* warm accent */
+    --ink:#4c1d95;       /* headings */
+    --body:#7c5ba8;      /* body text */
+    --muted:#a78bcf;     /* hints */
+    --cute:"Comic Sans MS","Chalkboard SE","Segoe UI Rounded","Trebuchet MS",system-ui,sans-serif;
   }
   html,body{height:100%}
   body{
     margin:0; min-height:100%; color:var(--body);
-    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    font-family:var(--cute);
     background:
-      radial-gradient(900px 560px at 12% -8%, #ffd9e8 0%, transparent 62%),
-      radial-gradient(760px 520px at 92% 2%, #ffe6d8 0%, transparent 58%),
-      radial-gradient(700px 500px at 50% 108%, #ffdfee 0%, transparent 60%),
-      linear-gradient(180deg,#ffffff 0%,#fffafc 45%,#fff2f7 100%);
+      radial-gradient(900px 560px at 12% -8%, #ede0ff 0%, transparent 62%),
+      radial-gradient(760px 520px at 92% 2%, #fde4ff 0%, transparent 58%),
+      radial-gradient(700px 500px at 50% 108%, #e7dcff 0%, transparent 60%),
+      linear-gradient(180deg,#ffffff 0%,#fdfaff 45%,#f6efff 100%);
     background-attachment:fixed;
     overflow-x:hidden;
   }
   /* ---------- background layers ---------- */
   #sky{position:fixed;inset:0;pointer-events:none;z-index:0}
-  .star{position:absolute;border-radius:50%;background:var(--pink);animation:tw 3s ease-in-out infinite}
-  @keyframes tw{0%,100%{opacity:.10;transform:scale(.7)}50%{opacity:.55;transform:scale(1.15)}}
+  .star{position:absolute;line-height:1;user-select:none;animation:tw 3.2s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.12;transform:scale(.7) rotate(-12deg)}50%{opacity:.5;transform:scale(1.1) rotate(12deg)}}
   /* above the surprise overlay (z 60) so confetti & fireworks stay visible */
   #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:65}
 
@@ -45,50 +46,61 @@
   main{position:relative;z-index:5;max-width:920px;margin:0 auto;padding:56px 20px 60px;text-align:center}
   .date{
     display:inline-block;letter-spacing:.28em;text-transform:uppercase;font-size:12px;
-    padding:8px 16px;border:1px solid var(--line);border-radius:999px;
-    background:#fff;color:var(--rose);margin:0 0 22px;
-    box-shadow:0 8px 22px -14px var(--pink)
+    padding:9px 18px;border:2px dashed var(--purple);border-radius:999px;
+    animation:wobble 4s ease-in-out infinite;
+    background:#fff;color:var(--grape);margin:0 0 22px;
+    box-shadow:0 8px 22px -14px var(--purple)
   }
   h1{
     font-size:clamp(38px,9vw,76px);line-height:1.02;margin:0 0 10px;font-weight:800;color:var(--ink)
   }
   h1 span{
     display:block;margin-top:6px;
-    background:linear-gradient(92deg,#ff8fbc,var(--pink) 45%,#c2185b);
+    background:linear-gradient(92deg,#c99bff,var(--purple) 45%,#6d28d9);
     -webkit-background-clip:text;background-clip:text;color:transparent;
-    font-size:clamp(48px,13vw,104px);font-family:Georgia,"Times New Roman",serif;font-style:italic
+    font-size:clamp(48px,13vw,104px);font-family:var(--cute);font-style:normal;
+    letter-spacing:.01em;animation:wobble 3.4s ease-in-out infinite;
+    filter:drop-shadow(0 4px 0 #fff) drop-shadow(0 6px 10px rgba(168,85,247,.35))
   }
   .from{
-    margin:6px 0 0;font-family:Georgia,"Times New Roman",serif;font-style:italic;
-    font-size:clamp(19px,4.6vw,26px);color:var(--rose)
+    margin:6px 0 0;font-family:var(--cute);font-style:normal;
+    font-size:clamp(19px,4.6vw,26px);color:var(--grape)
   }
-  .from b{font-style:normal;font-weight:800;color:var(--pink)}
-  .from .heart{display:inline-block;animation:beat 1.6s ease-in-out infinite;color:var(--pink)}
+  .from b{font-style:normal;font-weight:800;color:var(--purple)}
+  .from .heart{display:inline-block;animation:beat 1.6s ease-in-out infinite;color:var(--purple)}
+  @keyframes wobble{0%,100%{transform:rotate(-1.6deg) scale(1)}50%{transform:rotate(1.6deg) scale(1.03)}}
+  @keyframes jelly{0%,100%{transform:scale(1)}30%{transform:scale(1.12,.9)}60%{transform:scale(.94,1.08)}}
   @keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.28)}60%{transform:scale(1)}}
+  .tagline{
+    margin:10px 0 0;font-weight:800;color:var(--grape);font-size:clamp(16px,4vw,21px);
+    display:inline-block;padding:7px 18px;border-radius:999px;
+    background:var(--lilac);border:2px dashed var(--purple);
+    animation:wobble 3.8s ease-in-out infinite
+  }
   .sub{color:var(--body);max-width:520px;margin:14px auto 0;font-size:16px;line-height:1.6}
 
   /* ---------- sound controls ---------- */
   /* top-LEFT on purpose: the surprise panel's ✕ lives top-right */
   .sound{
     position:fixed;top:14px;left:14px;z-index:80;width:42px;height:42px;border-radius:50%;
-    cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--rose);font-size:17px;
-    box-shadow:0 10px 24px -16px rgba(224,64,126,.9)
+    cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--grape);font-size:17px;
+    box-shadow:0 10px 24px -16px rgba(124,58,237,.9)
   }
-  .sound:hover{background:var(--blush);border-color:var(--pink)}
+  .sound:hover{background:var(--lilac);border-color:var(--purple)}
   .songchip{
     margin:20px auto 0;display:inline-flex;align-items:center;gap:9px;cursor:pointer;
-    font:inherit;font-size:14px;font-weight:600;color:#fff;padding:11px 20px;border:0;border-radius:999px;
-    background:linear-gradient(92deg,#ff7fb0,var(--pink));box-shadow:0 14px 28px -14px var(--pink)
+    font:inherit;font-size:14.5px;font-weight:700;color:#fff;padding:12px 22px;border:0;border-radius:999px;
+    background:linear-gradient(92deg,#c084fc,var(--purple));box-shadow:0 14px 28px -14px var(--purple)
   }
-  .songchip:hover{filter:brightness(1.06)}
+  .songchip:hover{filter:brightness(1.06);transform:rotate(-1.5deg) scale(1.04)}
   .songchip.waiting{animation:nudge 1.5s ease-in-out infinite}
   @keyframes nudge{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 
-  /* ---------- best friend section ---------- */
+  /* ---------- little sister section ---------- */
   .bff{margin:60px auto 0;max-width:820px}
   .bff-rule{
     display:flex;align-items:center;gap:14px;justify-content:center;
-    color:var(--rose);letter-spacing:.26em;text-transform:uppercase;font-size:11px;font-weight:700
+    color:var(--grape);letter-spacing:.26em;text-transform:uppercase;font-size:11px;font-weight:700
   }
   .bff-rule::before,.bff-rule::after{
     content:"";height:1px;flex:0 1 90px;
@@ -96,7 +108,7 @@
   }
   .bff h2{
     margin:14px 0 6px;color:var(--ink);font-size:clamp(24px,5.4vw,34px);
-    font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400
+    font-family:var(--cute);font-style:normal;font-weight:400
   }
   .bff .lead{color:var(--body);margin:0 auto 30px;max-width:460px;font-size:15px;line-height:1.65}
   .bff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}
@@ -104,91 +116,101 @@
   @media(max-width:520px){.bff-grid{grid-template-columns:1fr}}
   .bff-card{
     display:flex;gap:13px;align-items:flex-start;
-    background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 16px 15px;
-    box-shadow:0 12px 28px -24px rgba(224,64,126,.9);
+    background:#fff;border:2px solid var(--line);border-radius:24px;padding:16px 16px 15px;
+    box-shadow:0 12px 28px -24px rgba(124,58,237,.9);
     transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease
   }
-  .bff-card:hover{transform:translateY(-5px);border-color:#ffb8d4;box-shadow:0 18px 34px -22px rgba(224,64,126,.85)}
+  .bff-card:hover{transform:translateY(-5px) rotate(-1deg);border-color:#dcc0ff;box-shadow:0 18px 34px -22px rgba(124,58,237,.85)}
   .bff-card .ico{
-    flex:0 0 38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:19px;
-    background:var(--blush)
+    flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:21px;
+    border:2px solid var(--line);
+    background:var(--lilac)
   }
   .bff-card b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:3px}
   .bff-card span.txt{display:block;color:var(--body);font-size:13.5px;line-height:1.6}
   .bff-seal{
     margin:30px auto 0;display:inline-block;padding:16px 26px;border-radius:20px;
-    background:linear-gradient(160deg,#fff,#fff2f8);border:1px dashed #ffb8d4;
+    background:linear-gradient(160deg,#fff,#f7effe);border:1px dashed #dcc0ff;
     color:var(--ink);font-size:15px;line-height:1.7;max-width:520px
   }
-  .bff-seal em{color:var(--rose);font-style:normal;font-weight:700}
+  .bff-seal em{color:var(--grape);font-style:normal;font-weight:700}
   .bff-sign{
-    display:block;margin-top:10px;font-family:Georgia,"Times New Roman",serif;font-style:italic;
-    font-size:19px;color:var(--pink)
+    display:block;margin-top:10px;font-family:var(--cute);font-style:normal;
+    font-size:19px;color:var(--purple)
   }
 
   /* ---------- gift cards ---------- */
   .gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:44px 0 22px}
-  @media(max-width:680px){.gifts{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+  @media(max-width:680px){.gifts{grid-template-columns:repeat(2,1fr);max-width:460px;margin-inline:auto;gap:14px}}
+  @media(max-width:430px){.gifts{grid-template-columns:1fr;max-width:340px}}
   .gift{
     position:relative;cursor:pointer;color:var(--ink);font:inherit;text-align:center;
-    padding:26px 16px 22px;border-radius:22px;border:1px solid var(--line);
-    background:#fff;box-shadow:0 14px 34px -22px rgba(224,64,126,.55);
+    padding:26px 16px 22px;border-radius:30px;border:3px dashed var(--line);
+    background:#fff;box-shadow:0 14px 34px -22px rgba(124,58,237,.55);
     transition:transform .28s cubic-bezier(.2,.9,.3,1.4),box-shadow .28s,border-color .28s;
     overflow:hidden;
   }
   .gift::after{
     content:"";position:absolute;inset:-40% -10% auto;height:70%;
-    background:linear-gradient(180deg,rgba(255,77,148,.10),transparent);
+    background:linear-gradient(180deg,rgba(168,85,247,.10),transparent);
     transform:translateY(-100%);transition:transform .5s
   }
   .gift:focus{outline:none}
-  .gift:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
-  .gift:hover{transform:translateY(-10px) rotate(-1.5deg);border-color:var(--pink)}
+  .gift:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+  .gift:hover{transform:translateY(-10px) rotate(-2.5deg) scale(1.03);border-color:var(--purple)}
+  .gift:active{animation:jelly .4s ease}
   .gift:hover::after{transform:translateY(0)}
-  .gift.g1:hover{box-shadow:0 24px 44px -20px var(--pink)}
-  .gift.g2:hover{box-shadow:0 24px 44px -20px #ff85b3}
-  .gift.g3:hover{box-shadow:0 24px 44px -20px #f0a8c6}
+  .gift.g1:hover{box-shadow:0 24px 44px -20px var(--purple)}
+  .gift.g2:hover{box-shadow:0 24px 44px -20px #b57cf7}
+  .gift.g3:hover{box-shadow:0 24px 44px -20px #b98cf5}
+  .gift.g4:hover{box-shadow:0 24px 44px -20px #c084fc}
+  .gift.g5:hover{box-shadow:0 24px 44px -20px #9d6cf0}
+  .gift.g6:hover{box-shadow:0 24px 44px -20px #8b5cf6}
   .gift .emoji{font-size:52px;display:block;animation:bob 2.6s ease-in-out infinite}
   .gift.g2 .emoji{animation-delay:.4s}
   .gift.g3 .emoji{animation-delay:.8s}
+  .gift.g4 .emoji{animation-delay:1.2s}
+  .gift.g5 .emoji{animation-delay:1.6s}
+  .gift.g6 .emoji{animation-delay:2s}
   @keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}
   .gift b{display:block;margin-top:12px;font-size:17px;color:var(--ink)}
   .gift small{display:block;margin-top:4px;color:var(--muted);font-size:12.5px;letter-spacing:.06em}
-  .gift.done{background:var(--blush-2);border-color:var(--line);box-shadow:none}
+  .gift.done{background:var(--lilac-2);border-color:var(--line);box-shadow:none}
   .gift.done .emoji{opacity:.7}
-  .gift.done small{color:var(--rose);font-weight:600}
+  .gift.done small{color:var(--grape);font-weight:600}
   .progress{color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 
   /* ---------- surprise stage ---------- */
   .stage{
     position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:20px;
-    background:rgba(255,236,244,.82);backdrop-filter:blur(10px);animation:fade .35s ease
+    background:rgba(243,232,255,.82);backdrop-filter:blur(10px);animation:fade .35s ease
   }
   .stage[hidden]{display:none}
   @keyframes fade{from{opacity:0}to{opacity:1}}
   .panel{
     position:relative;width:min(560px,100%);max-height:88vh;overflow:auto;
-    border-radius:26px;padding:34px 26px 30px;text-align:center;
-    border:1px solid var(--line);
-    background:linear-gradient(160deg,#ffffff 0%,#fff4f9 100%);
-    box-shadow:0 40px 80px -34px rgba(180,30,90,.45);animation:pop .5s cubic-bezier(.2,.9,.3,1.35)
+    border-radius:34px;padding:34px 26px 30px;text-align:center;
+    border:3px solid var(--line);
+    background:linear-gradient(160deg,#ffffff 0%,#f9f2ff 100%);
+    box-shadow:0 40px 80px -34px rgba(91,33,182,.45);animation:pop .5s cubic-bezier(.2,.9,.3,1.35)
   }
   @keyframes pop{from{opacity:0;transform:translateY(28px) scale(.9)}to{opacity:1;transform:none}}
   .panel h2{margin:0 0 6px;font-size:26px;color:var(--ink)}
-  .panel .tag{color:var(--pink);letter-spacing:.2em;text-transform:uppercase;font-size:11px;margin:0 0 16px;font-weight:700}
+  .panel .tag{color:var(--purple);letter-spacing:.2em;text-transform:uppercase;font-size:11px;margin:0 0 16px;font-weight:700}
   .panel p{color:var(--body);line-height:1.75;margin:12px 0 0;font-size:15.5px}
   .close{
     position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;cursor:pointer;
-    border:1px solid var(--line);background:#fff;color:var(--rose);font-size:15px
+    border:1px solid var(--line);background:#fff;color:var(--grape);font-size:15px
   }
-  .close:hover{background:var(--blush);border-color:var(--pink)}
+  .close:hover{background:var(--lilac);border-color:var(--purple)}
   .btn{
     margin-top:22px;cursor:pointer;font:inherit;font-weight:700;color:#fff;
-    padding:12px 24px;border:0;border-radius:999px;
-    background:linear-gradient(92deg,#ff7fb0,var(--pink));
-    box-shadow:0 14px 28px -12px var(--pink)
+    padding:13px 26px;border:0;border-radius:999px;
+    background:linear-gradient(92deg,#c084fc,var(--purple));
+    box-shadow:0 14px 28px -12px var(--purple)
   }
-  .btn:hover{filter:brightness(1.06)}
+  .btn:hover{filter:brightness(1.06);transform:translateY(-2px) rotate(-1.5deg)}
+  .btn:active{animation:jelly .4s ease}
 
   /* ---------- scene 1: flip card ---------- */
   .card{width:220px;height:150px;margin:18px auto 6px;perspective:900px;cursor:pointer}
@@ -197,9 +219,9 @@
   .face{
     position:absolute;inset:0;border-radius:16px;display:grid;place-items:center;
     backface-visibility:hidden;font-size:14px;padding:14px;line-height:1.6;
-    box-shadow:0 16px 34px -20px rgba(224,64,126,.7)
+    box-shadow:0 16px 34px -20px rgba(124,58,237,.7)
   }
-  .front{background:linear-gradient(140deg,#ff8fbc,var(--pink));font-size:44px;border:1px solid #ff9ec4}
+  .front{background:linear-gradient(140deg,#c99bff,var(--purple));font-size:44px;border:1px solid #c9a2ff}
   .back{background:#fff;color:var(--ink);transform:rotateY(180deg);font-weight:600;border:1px solid var(--line)}
 
   /* ---------- scene 2: cake ---------- */
@@ -207,7 +229,7 @@
   .candles{display:flex;justify-content:center;gap:26px;align-items:flex-end;height:64px}
   .candle{
     position:relative;width:10px;height:46px;border-radius:4px;cursor:pointer;
-    background:repeating-linear-gradient(45deg,#fff 0 5px,var(--pink) 5px 10px);
+    background:repeating-linear-gradient(45deg,#fff 0 5px,var(--purple) 5px 10px);
     border:1px solid var(--line)
   }
   .flame{
@@ -222,41 +244,88 @@
   .tier{border-radius:12px 12px 8px 8px;margin:0 auto}
   .t1{
     width:150px;height:38px;position:relative;border-radius:14px 14px 4px 4px;
-    background:linear-gradient(#ffffff,#ffe3ef);border:1px solid var(--line);
-    box-shadow:0 10px 22px -16px rgba(224,64,126,.8)
+    background:linear-gradient(#ffffff,#f3e8ff);border:1px solid var(--line);
+    box-shadow:0 10px 22px -16px rgba(124,58,237,.8)
   }
   .t1::after{content:"";position:absolute;inset:auto -1px -9px;height:16px;border-radius:0 0 50% 50%/0 0 100% 100%;background:#fff;border:1px solid var(--line);border-top:0}
   .t2{
     width:210px;height:56px;margin-top:8px;position:relative;
-    background:linear-gradient(#ff8fbc,var(--pink));border:1px solid #ff9ec4;
-    box-shadow:0 14px 26px -18px rgba(224,64,126,.9)
+    background:linear-gradient(#c99bff,var(--purple));border:1px solid #c9a2ff;
+    box-shadow:0 14px 26px -18px rgba(124,58,237,.9)
   }
-  .t2::after{content:"";position:absolute;inset:auto -1px -10px;height:18px;border-radius:0 0 50% 50%/0 0 100% 100%;background:#ffd3e5;border:1px solid #ffc0da;border-top:0}
-  .plate{width:250px;height:12px;margin:12px auto 0;border-radius:999px;background:#f6d6e3}
-  .blow{color:var(--rose);font-size:13.5px;letter-spacing:.08em;margin-top:20px;min-height:22px;font-weight:600}
+  .t2::after{content:"";position:absolute;inset:auto -1px -10px;height:18px;border-radius:0 0 50% 50%/0 0 100% 100%;background:#e6d5ff;border:1px solid #d9c2ff;border-top:0}
+  .plate{width:250px;height:12px;margin:12px auto 0;border-radius:999px;background:#e2d3f5}
+  .blow{color:var(--grape);font-size:13.5px;letter-spacing:.08em;margin-top:20px;min-height:22px;font-weight:600}
 
   /* ---------- balloons ---------- */
   .balloon{
     position:fixed;bottom:-140px;width:44px;height:56px;border-radius:50% 50% 46% 46%;
     z-index:63;pointer-events:none;animation:rise linear forwards
   }
-  .balloon::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:70px;background:rgba(224,64,126,.35)}
+  .balloon::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:70px;background:rgba(124,58,237,.35)}
   @keyframes rise{to{transform:translateY(-118vh) rotate(14deg);opacity:.15}}
 
   /* ---------- scene 3: letter ---------- */
   .letter{
-    margin-top:18px;text-align:left;background:#fffafd;border:1px dashed #ffb8d4;
+    margin-top:18px;text-align:left;background:#fdf9ff;border:1px dashed #dcc0ff;
     border-radius:16px;padding:20px;min-height:200px;font-size:15.5px;line-height:1.85;
     color:var(--ink);white-space:pre-wrap
   }
-  .cursor{color:var(--pink)}
+  .cursor{color:var(--purple)}
+
+  /* ---------- scene 4: scratch card ---------- */
+  .scratch-wrap{
+    position:relative;width:280px;height:170px;margin:22px auto 6px;
+    border-radius:22px;overflow:hidden;border:3px dashed var(--line);background:#fff
+  }
+  .scratch-under{
+    position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;
+    background:linear-gradient(160deg,#fff,var(--lilac));
+    color:var(--ink);font-weight:700;font-size:15px;line-height:1.55
+  }
+  /* touch-action:none so dragging a finger scratches instead of scrolling the panel */
+  #scratch{position:absolute;inset:0;touch-action:none;cursor:grab}
+  #scratch:active{cursor:grabbing}
+
+  /* ---------- scene 5: fortune cookies ---------- */
+  .cookie{
+    font-size:78px;line-height:1;cursor:pointer;background:none;border:0;padding:0;margin:16px 0 2px;
+    filter:drop-shadow(0 12px 20px rgba(124,58,237,.35));transition:transform .2s
+  }
+  .cookie:hover{transform:scale(1.09) rotate(-5deg)}
+  .cookie:active{animation:jelly .4s ease}
+  .slip{
+    margin:14px auto 0;max-width:380px;padding:16px 20px;border-radius:20px;
+    background:#fff;border:2px dashed var(--purple);color:var(--ink);
+    font-size:15px;line-height:1.65;
+    animation:slipin .45s cubic-bezier(.2,.9,.3,1.5)
+  }
+  @keyframes slipin{from{opacity:0;transform:translateY(-16px) rotate(-3deg) scale(.9)}to{opacity:1;transform:none}}
+
+  /* ---------- scene 6: balloon pop ---------- */
+  .pops{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0 18px}
+  .pop{
+    position:relative;width:46px;height:58px;border-radius:50% 50% 46% 46%;
+    cursor:pointer;border:0;padding:0;font:inherit;
+    box-shadow:inset -6px -9px 16px rgba(76,29,149,.14);transition:transform .2s
+  }
+  .pop::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:16px;background:rgba(124,58,237,.4)}
+  .pop:hover{transform:scale(1.12) rotate(-4deg)}
+  .pop.gone{visibility:hidden}
+  .letters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  .slot{
+    width:36px;height:44px;border-radius:14px;display:grid;place-items:center;
+    border:2px dashed var(--line);background:var(--lilac-2);
+    font-weight:800;font-size:21px;color:var(--muted)
+  }
+  .slot.on{border-style:solid;border-color:var(--purple);background:#fff;color:var(--purple);animation:jelly .45s ease}
 
   /* ---------- finale banner ---------- */
   .finale{
     position:fixed;left:50%;top:26px;transform:translateX(-50%);z-index:70;max-width:92vw;
     padding:14px 26px;border-radius:999px;font-weight:700;color:#fff;text-align:center;
-    background:linear-gradient(92deg,#ff7fb0,var(--pink) 60%,#d81b60);
-    box-shadow:0 20px 40px -16px rgba(216,27,96,.6);
+    background:linear-gradient(92deg,#c084fc,var(--purple) 60%,#7e22ce);
+    box-shadow:0 20px 40px -16px rgba(126,34,206,.6);
     animation:drop .6s cubic-bezier(.2,.9,.3,1.4)
   }
   @keyframes drop{from{opacity:0;transform:translate(-50%,-40px)}to{opacity:1;transform:translate(-50%,0)}}
@@ -269,62 +338,62 @@
 <button class="sound" id="sound" aria-label="Turn sound off" title="Sound on/off">🔊</button>
 
 <main>
-  <p class="date">🎈 9 September 🎈</p>
-  <h1>Happy Birthday,<span>Farwa</span></h1>
+  <p class="date">🎈 21 September 🎈</p>
+  <h1>Happy Birthday,<span>Ayesha</span></h1>
+  <p class="tagline">my little sister 💜🎀</p>
   <p class="from">from <b>Faiqa</b> <span class="heart">♥</span></p>
-  <p class="sub">I hid three little surprises on this page just for you. Tap each gift — every one is different 💝</p>
+  <p class="sub">I hid six teeny surprises on this page just for you. Tap every gift — each one does something different 💝</p>
 
   <p><button class="songchip" id="songchip">🎵 <span id="songlabel">Play the birthday song</span></button></p>
 
   <div class="gifts">
     <button class="gift g1" data-scene="1"><span class="emoji">🎁</span><b>Surprise One</b><small>tap to unwrap</small></button>
     <button class="gift g2" data-scene="2"><span class="emoji">🎂</span><b>Surprise Two</b><small>tap to unwrap</small></button>
-    <button class="gift g3" data-scene="3"><span class="emoji">✨</span><b>Surprise Three</b><small>tap to unwrap</small></button>
+    <button class="gift g3" data-scene="3"><span class="emoji">🎆</span><b>Surprise Three</b><small>tap to unwrap</small></button>
+    <button class="gift g4" data-scene="4"><span class="emoji">🪙</span><b>Surprise Four</b><small>tap to unwrap</small></button>
+    <button class="gift g5" data-scene="5"><span class="emoji">🥠</span><b>Surprise Five</b><small>tap to unwrap</small></button>
+    <button class="gift g6" data-scene="6"><span class="emoji">🎈</span><b>Surprise Six</b><small>tap to unwrap</small></button>
   </div>
 
-  <p class="progress" id="progress">0 of 3 unwrapped</p>
+  <p class="progress" id="progress">0 of 6 unwrapped</p>
 
   <section class="bff">
-    <p class="bff-rule">Best friends</p>
-    <h2>Why you are my favourite person</h2>
-    <p class="lead">Every year I get one official excuse to say all of this out loud. So here it is.</p>
+    <p class="bff-rule">💜 Little sister 💜</p>
+    <h2>Why you are my favourite human</h2>
+    <p class="lead">Once a year I get an official excuse to be this soppy about you. So here it is.</p>
 
     <div class="bff-grid">
       <div class="bff-card">
-        <div class="ico">😂</div>
-        <div><b>You laugh at my worst jokes</b><span class="txt">And then immediately tell a worse one. Perfect system.</span></div>
+        <div class="ico">🍭</div>
+        <div><b>You are my whole heart</b><span class="txt">Tiny sister, enormous personality. No notes.</span></div>
       </div>
       <div class="bff-card">
-        <div class="ico">📞</div>
-        <div><b>Calls that solve nothing</b><span class="txt">Three hours, no conclusion, somehow everything feels better.</span></div>
+        <div class="ico">😹</div>
+        <div><b>You laugh at my worst jokes</b><span class="txt">And then tell a worse one. Perfect system.</span></div>
       </div>
       <div class="bff-card">
-        <div class="ico">🛟</div>
-        <div><b>You always show up</b><span class="txt">Every time it mattered, you were already there.</span></div>
+        <div class="ico">🧸</div>
+        <div><b>You steal my things</b><span class="txt">My clothes, my snacks, my charger. Keep them. Forgiven.</span></div>
       </div>
       <div class="bff-card">
-        <div class="ico">🤫</div>
-        <div><b>My secrets are safe</b><span class="txt">Safer with you than they ever were with me.</span></div>
-      </div>
-      <div class="bff-card">
-        <div class="ico">🍟</div>
-        <div><b>Zero judgement, always</b><span class="txt">Shared food, terrible plans, no questions asked.</span></div>
+        <div class="ico">🌈</div>
+        <div><b>You make ordinary days silly</b><span class="txt">Nothing boring survives you being in the room.</span></div>
       </div>
       <div class="bff-card">
         <div class="ico">💪</div>
-        <div><b>You believe in me loudly</b><span class="txt">Usually louder than I manage to believe in myself.</span></div>
+        <div><b>I am so proud of you</b><span class="txt">Quietly, constantly, and much more than I ever say out loud.</span></div>
       </div>
     </div>
 
     <div class="bff-seal">
-      Some people are friends. You are <em>family I got to choose</em>.
+      Little sister by birth, <em>my favourite person by choice</em> 💜
       Thank you for every ordinary day you quietly made better.
-      <span class="bff-sign">— always yours, Faiqa ♥</span>
+      <span class="bff-sign">— always your big sister, Faiqa ♥</span>
     </div>
   </section>
 </main>
 
-<footer>made with a lot of &hearts; by Faiqa &middot; for Farwa &middot; 9 September</footer>
+<footer>made with a lot of &hearts; by Faiqa &middot; for my little sister Ayesha &middot; 21 September 💜</footer>
 
 <div class="stage" id="stage" hidden>
   <div class="panel" id="panel">
@@ -334,13 +403,15 @@
 </div>
 
 <script>
-/* ============ soft pink twinkles ============ */
+/* ============ floating sparkles ============ */
 (function(){
   var sky=document.getElementById('sky'),f=document.createDocumentFragment();
-  for(var i=0;i<90;i++){
+  var CUTE=['✨','💜','⭐','🌸','🫧','🦄','🍭','🎀','☁️','🧁','🌈','💫'];
+  for(var i=0;i<46;i++){
     var s=document.createElement('div');s.className='star';
-    var r=Math.random()*3.2+1.4;
-    s.style.cssText='width:'+r+'px;height:'+r+'px;left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*3).toFixed(2)+'s';
+    s.textContent=CUTE[(Math.random()*CUTE.length)|0];
+    var r=(Math.random()*15+9).toFixed(1);
+    s.style.cssText='font-size:'+r+'px;left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;animation-delay:'+(Math.random()*3).toFixed(2)+'s';
     f.appendChild(s);
   }
   sky.appendChild(f);
@@ -357,8 +428,8 @@ function sizeCanvas(){
 sizeCanvas();addEventListener('resize',sizeCanvas);
 
 var P=[];
-/* pinks + a warm gold — all chosen to read clearly on a white background */
-var PALETTE=['#ff4d94','#ff8fbc','#e0407e','#d81b60','#ffb3d1','#e8a33d','#c2185b'];
+/* purples + a warm gold — all chosen to read clearly on a white background */
+var PALETTE=['#a855f7','#c99bff','#7c3aed','#7e22ce','#ddb8ff','#fbbf24','#6d28d9'];
 function pick(a){return a[(Math.random()*a.length)|0]}
 
 function confetti(x,y,n,power){
@@ -386,7 +457,7 @@ function firework(wide){
     : (Math.random()<0.5 ? (0.03+Math.random()*0.19) : (0.78+Math.random()*0.19))*W;
   var y=(0.10+Math.random()*0.45)*H, c=pick(PALETTE);
   spark(x,y,55,c);
-  setTimeout(function(){spark(x,y,24,'#ffb3d1')},90);
+  setTimeout(function(){spark(x,y,24,'#ddb8ff')},90);
 }
 (function loop(){
   ctx.clearRect(0,0,W,H);
@@ -429,7 +500,7 @@ function balloons(n){
    playback is attempted on load and otherwise waits for the first tap.
 =================================================================*/
 var AC=null,master=null,muted=false,melodyUntil=0;
-try{muted=localStorage.getItem('farwa-muted')==='1'}catch(e){}
+try{muted=localStorage.getItem('ayesha-muted')==='1'}catch(e){}
 
 function actx(){
   if(AC!==null)return AC;
@@ -528,7 +599,7 @@ paintSound();
 function setMuted(m){
   muted=m;
   if(master)master.gain.value=muted?0:0.5;
-  try{localStorage.setItem('farwa-muted',muted?'1':'0')}catch(e){}
+  try{localStorage.setItem('ayesha-muted',muted?'1':'0')}catch(e){}
   paintSound();
 }
 soundBtn.onclick=function(){
@@ -576,12 +647,12 @@ var scenes={
     sceneEl.innerHTML=
       '<p class="tag">Surprise one</p>'+
       '<h2>A confetti storm 🎉</h2>'+
-      '<p>Because a day this good deserves noise, colour and a little bit of mess.</p>'+
+      '<p>Because a day this cute deserves noise, colour and a whole lot of mess. 💜</p>'+
       '<div class="card" id="card"><div class="card-in">'+
         '<div class="face front">💌</div>'+
-        '<div class="face back">Farwa, you are the friend who makes ordinary days feel like celebrations. Today it is your turn. 🥳<br><span style="color:#e0407e">— Faiqa</span></div>'+
+        '<div class="face back">Ayesha, my little sister — you make ordinary days feel like a party. Today the party is officially yours. 🥳<br><span style="color:#7c3aed">— Faiqa</span></div>'+
       '</div></div>'+
-      '<p style="font-size:13px;color:#b3778f">(tap the envelope to open it)</p>'+
+      '<p style="font-size:13px;color:#a78bcf">(tap the envelope to open it! 💌)</p>'+
       '<button class="btn" id="more">More confetti!</button>';
     confetti(innerWidth/2*DPR, innerHeight*0.35*DPR, 170, 16);
     sfx.pop();sfx.sparkle();                       /* party popper */
@@ -603,7 +674,7 @@ var scenes={
     sceneEl.innerHTML=
       '<p class="tag">Surprise two</p>'+
       '<h2>Your cake is served 🎂</h2>'+
-      '<p>Three candles, three wishes. Tap each flame to blow it out.</p>'+
+      '<p>Three candles, three wishes. Tap each little flame and blow it out! 🌬️</p>'+
       '<div class="cake-wrap">'+
         '<div class="candles">'+
           '<div class="candle"><div class="flame"></div></div>'+
@@ -622,12 +693,12 @@ var scenes={
         if(c.className.indexOf('out')>-1)return;
         c.className+=' out';
         var b=c.getBoundingClientRect();
-        spark((b.left+b.width/2)*DPR,b.top*DPR,26,'#e8a33d');
+        spark((b.left+b.width/2)*DPR,b.top*DPR,26,'#fbbf24');
         sfx.puff();                                  /* blowing it out */
         var n=cs.filter(function(x){return x.className.indexOf('out')>-1}).length;
         blow.textContent=n+' / 3 candles out';
         if(n===3){
-          blow.innerHTML='<b style="color:#d81b60">All three wishes are officially on their way ✨</b>';
+          blow.innerHTML='<b style="color:#7e22ce">All three wishes are officially on their way ✨💜</b>';
           confetti(innerWidth/2*DPR, innerHeight*0.4*DPR, 200, 17);
           balloons(20);
           sfx.chime();
@@ -644,7 +715,7 @@ var scenes={
     every(function(){firework();sfx.firework()}, 1300);
     sfx.firework();
     balloons(12);
-    var text = 'Dear Farwa,\n\nHappy 9th of September. 🎈\n\nThank you for the laughs at the worst possible moments, for showing up when it actually mattered, and for being completely impossible to replace.\n\nMay this year be kind to you: soft mornings, big wins, zero drama, and every single wish you make today.\n\nYou deserve all of it, and then a little extra.\n\nHappy birthday, best friend.\n\n— with love, always,\nFaiqa ♥';
+    var text = 'Dear Ayesha,\n\nHappy 21st of September, little sister. 🎈💜\n\nThank you for the giggles at the worst possible moments, for stealing my snacks without shame, and for being completely impossible to replace.\n\nMay this year be soft with you: sweet mornings, big wins, zero drama, and every single wish you make today.\n\nYou deserve all of it, and then a little extra sprinkle on top.\n\nHappy birthday, my little sister.\n\n— with love, always,\nyour big sister Faiqa ♥';
     var el=document.getElementById('letter');
     /* Driven by the wall clock, not by one-char-per-tick and not by rAF:
        - one char per tick gets throttled to a crawl while the fireworks run
@@ -673,8 +744,156 @@ var scenes={
     }
     type();
     document.getElementById('again').onclick=type;
+  },
+  '4':function(){
+    sceneEl.innerHTML=
+      '<p class="tag">Surprise four</p>'+
+      '<h2>A scratch card 🪙</h2>'+
+      '<p>Something is hiding under all that purple. Scratch it off — drag your finger across it.</p>'+
+      '<div class="scratch-wrap">'+
+        '<div class="scratch-under">Officially the best little sister in the entire world. Certified, stamped, no refunds. 💜</div>'+
+        '<canvas id="scratch"></canvas>'+
+      '</div>'+
+      '<div class="blow" id="scmsg">scratch to reveal ✨</div>'+
+      '<button class="btn" id="scall">Reveal it for me</button>';
+    var CW=280,CH=170;
+    var cnv=document.getElementById('scratch'),g=cnv.getContext('2d');
+    cnv.width=CW*DPR;cnv.height=CH*DPR;cnv.style.width=CW+'px';cnv.style.height=CH+'px';
+    var grd=g.createLinearGradient(0,0,cnv.width,cnv.height);
+    grd.addColorStop(0,'#c99bff');grd.addColorStop(.5,'#a855f7');grd.addColorStop(1,'#7c3aed');
+    g.fillStyle=grd;g.fillRect(0,0,cnv.width,cnv.height);
+    /* a little foil glitter so the covering reads as a scratch panel */
+    g.fillStyle='#fff';g.globalAlpha=.28;
+    for(var k=0;k<46;k++){
+      g.beginPath();g.arc(Math.random()*cnv.width,Math.random()*cnv.height,(Math.random()*2+1)*DPR,0,7);g.fill();
+    }
+    g.globalAlpha=1;
+    g.fillStyle='rgba(255,255,255,.96)';g.textAlign='center';g.textBaseline='middle';
+    g.font='bold '+Math.round(19*DPR)+'px "Comic Sans MS","Trebuchet MS",sans-serif';
+    g.fillText('scratch me! 🪙',cnv.width/2,cnv.height/2);
+
+    var msg=document.getElementById('scmsg'),done=false,moves=0;
+    /* sampling every 24th pixel is plenty to estimate how much is gone,
+       and cheap enough to run while the rest of the page is animating */
+    function cleared(){
+      var d=g.getImageData(0,0,cnv.width,cnv.height).data,gone=0,total=0;
+      for(var i=3;i<d.length;i+=96){total++;if(d[i]<40)gone++}
+      return total?gone/total:0;
+    }
+    function revealAll(){
+      if(done)return;done=true;
+      g.clearRect(0,0,cnv.width,cnv.height);
+      msg.innerHTML='<b style="color:#7e22ce">Certified best little sister 💜</b>';
+      var b=cnv.getBoundingClientRect();
+      confetti((b.left+b.width/2)*DPR,(b.top+b.height/2)*DPR,150,14);
+      sfx.chime();
+    }
+    /* joining the previous point to this one keeps the stroke continuous even when
+       the browser only delivers a handful of pointermove events per swipe */
+    var last=null;
+    function scratchAt(e){
+      if(done)return;
+      var r=cnv.getBoundingClientRect();
+      var x=(e.clientX-r.left)*(cnv.width/r.width),y=(e.clientY-r.top)*(cnv.height/r.height);
+      g.globalCompositeOperation='destination-out';
+      g.beginPath();g.arc(x,y,21*DPR,0,7);g.fill();
+      if(last){
+        g.lineWidth=42*DPR;g.lineCap='round';g.lineJoin='round';
+        g.beginPath();g.moveTo(last[0],last[1]);g.lineTo(x,y);g.stroke();
+      }
+      g.globalCompositeOperation='source-over';
+      last=[x,y];
+      if(++moves%6===0)sfx.tick();
+      if(moves%10===0&&cleared()>0.5)revealAll();
+    }
+    cnv.addEventListener('pointerdown',function(e){
+      if(cnv.setPointerCapture)cnv.setPointerCapture(e.pointerId);
+      last=null;scratchAt(e);
+    });
+    cnv.addEventListener('pointermove',function(e){if(e.buttons)scratchAt(e)});
+    document.getElementById('scall').onclick=revealAll;
+  },
+  '5':function(){
+    sceneEl.innerHTML=
+      '<p class="tag">Surprise five</p>'+
+      '<h2>Fortune cookies 🥠</h2>'+
+      '<p>I wrote you a whole jar of tiny fortunes. Tap the cookie to crack one open.</p>'+
+      '<button class="cookie" id="cookie" aria-label="Crack open a fortune cookie">🥠</button>'+
+      '<div id="slips"></div>'+
+      '<div class="blow" id="ckmsg">tap the cookie 💜</div>';
+    var WISHES=[
+      'This year somebody is going to be extremely proud of you. (It is me. It is already happening.) 💜',
+      'A snack you did not pay for is in your future. Sorry in advance — it was mine. 🍫',
+      'You will laugh so hard at something stupid that you briefly forget how to breathe.',
+      'That thing you have been quietly worrying about? It works out. Genuinely.',
+      'One (1) excellent nap in a warm patch of sunlight is headed your way. ☀️',
+      'A song will come on and you will dance like nobody is watching. Somebody is. It is fine.',
+      'You are going to be braver this year than you currently feel.',
+      'Your big sister will annoy you at least 400 more times. That is a promise, not a threat. 😇',
+      'Good news is coming, and I had better be the first person you tell.',
+      'You will surprise yourself with how much you can actually handle.',
+      'Someone is thinking about you right now and smiling about it. Obviously.',
+      'This whole year is going to be a little softer on you. You have earned that one.'
+    ];
+    /* draw without replacement so every fortune is seen before any repeats */
+    var bag=[],slips=document.getElementById('slips'),msg=document.getElementById('ckmsg');
+    var cookie=document.getElementById('cookie');
+    cookie.onclick=function(){
+      if(!bag.length)bag=WISHES.slice();
+      var t=bag.splice((Math.random()*bag.length)|0,1)[0];
+      slips.innerHTML='';
+      var d=document.createElement('div');d.className='slip';d.textContent=t;
+      slips.appendChild(d);
+      msg.textContent=bag.length?'tap again — '+bag.length+' fortunes left':'that was the last one… tap to refill the jar 💜';
+      var b=cookie.getBoundingClientRect();
+      spark((b.left+b.width/2)*DPR,(b.top+b.height/2)*DPR,22,'#a855f7');
+      sfx.sparkle();
+    };
+  },
+  '6':function(){
+    sceneEl.innerHTML=
+      '<p class="tag">Surprise six</p>'+
+      '<h2>Pop them all 🎈</h2>'+
+      '<p>Six balloons, six letters. Pop every single one of them!</p>'+
+      '<div class="pops" id="pops"></div>'+
+      '<div class="letters" id="letters"></div>'+
+      '<div class="blow" id="popmsg">0 / 6 popped</div>';
+    var NAME='AYESHA',COLS=['#a855f7','#c084fc','#7c3aed','#c99bff','#ddb8ff','#6d28d9'];
+    var pops=document.getElementById('pops'),letters=document.getElementById('letters');
+    var msg=document.getElementById('popmsg'),popped=0;
+    for(var i=0;i<NAME.length;i++){
+      var b=document.createElement('button');b.className='pop';
+      b.style.background='radial-gradient(circle at 32% 28%,rgba(255,255,255,.75),'+COLS[i]+')';
+      b.setAttribute('aria-label','Pop balloon '+(i+1));
+      pops.appendChild(b);
+      var s=document.createElement('div');s.className='slot';s.textContent='?';
+      letters.appendChild(s);
+    }
+    var bs=[].slice.call(pops.children),ss=[].slice.call(letters.children);
+    bs.forEach(function(b,i){
+      b.onclick=function(){
+        if(b.className.indexOf('gone')>-1)return;
+        b.className+=' gone';
+        var r=b.getBoundingClientRect();
+        spark((r.left+r.width/2)*DPR,(r.top+r.height/2)*DPR,30,COLS[i]);
+        confetti((r.left+r.width/2)*DPR,(r.top+r.height/2)*DPR,20,8);
+        sfx.pop();
+        ss[i].textContent=NAME.charAt(i);ss[i].className='slot on';
+        popped++;
+        msg.textContent=popped+' / '+NAME.length+' popped';
+        if(popped===NAME.length){
+          msg.innerHTML='<b style="color:#7e22ce">A-Y-E-S-H-A — the best name in this house 💜</b>';
+          confetti(innerWidth/2*DPR,innerHeight*0.4*DPR,200,16);
+          balloons(18);sfx.fanfare();
+        }
+      };
+    });
   }
 };
+
+/* counted from the markup so adding another gift card needs no changes here */
+var TOTAL=document.querySelectorAll('.gift').length;
+document.getElementById('progress').textContent='0 of '+TOTAL+' unwrapped';
 
 function openScene(n){
   clearTimers();
@@ -685,10 +904,10 @@ function openScene(n){
     var card=document.querySelector('.gift[data-scene="'+n+'"]');
     card.className+=' done';
     card.querySelector('small').textContent='unwrapped ✓';
-    document.getElementById('progress').textContent=openedCount+' of 3 unwrapped';
+    document.getElementById('progress').textContent=openedCount+' of '+TOTAL+' unwrapped';
     /* hold the finale until the letter has finished typing, so it stays readable.
        kept off the `timers` list so closing a scene cannot cancel it. */
-    if(openedCount===3){finalePending=true;finaleTimer=setTimeout(finale,12500)}
+    if(openedCount===TOTAL){finalePending=true;finaleTimer=setTimeout(finale,12500)}
   }
 }
 function closeScene(){
@@ -702,7 +921,7 @@ function finale(){
   finalePending=false;clearTimeout(finaleTimer);
   if(finaleDone)return;finaleDone=true;
   var b=document.createElement('div');b.className='finale';
-  b.textContent='🎉 All three unwrapped — you are officially celebrated, Farwa!';
+  b.textContent='🎉 Every surprise unwrapped — you are officially celebrated, Ayesha! 💜';
   document.body.appendChild(b);
   sfx.fanfare();
   for(var i=0;i<6;i++){
