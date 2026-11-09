@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Happy Birthday, Azhar</title>
-<meta name="description" content="A little birthday journey, made with love — memories, candles, kisses and a letter.">
-<meta property="og:title" content="Happy Birthday, Azhar! 💋">
+<meta name="description" content="A little birthday journey, made with love — memories, candles, blessings and a letter.">
+<meta property="og:title" content="Happy Birthday, Azhar! ❤️">
 <meta property="og:description" content="Memories to unlock, candles to blow out, and a letter just for you.">
 <meta name="theme-color" content="#370617">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
@@ -355,7 +355,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
     <div class="section-head reveal">
       <p class="eyebrow">Chapter one</p>
       <h2>Memory <em>Lane</em></h2>
-      <p>Six little secrets, sealed with a kiss. Tap each card to unlock a memory, a reason, or a whisper meant only for you.</p>
+      <p>Six little secrets, sealed with love. Tap each card to unlock a memory, a reason, or a whisper meant only for you.</p>
       <span class="progress-pill" id="memProgress">0 of 6 unlocked</span>
     </div>
     <div class="memory-grid" id="memoryGrid"></div>
@@ -406,22 +406,22 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
   </div>
 </section>
 
-<!-- ================= KISSES & HUGS ================= -->
+<!-- ================= LOVE & BLESSINGS ================= -->
 <section class="section kiss-zone" id="kisses">
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Chapter three</p>
-      <h2>Kisses <em>&amp;</em> Hugs</h2>
-      <p>Unlimited supply, no expiry date. Press the button whenever you need one — they'll fly straight to you.</p>
+      <h2>Love <em>&amp;</em> Blessings</h2>
+      <p>Unlimited supply, no expiry date. Press the button whenever you need a little love, a flower or a prayer — they'll fly straight to you.</p>
     </div>
     <div class="kiss-card reveal">
       <span class="tape t1"></span><span class="tape t2"></span>
       <div class="kiss-count" id="kissCount" aria-live="polite">0</div>
-      <div class="kiss-count-label">kisses &amp; hugs sent</div>
-      <button class="kiss-btn" id="kissBtn" aria-label="Send kisses and hugs">
-        <svg viewBox="0 0 100 62" class="sticker"><use href="#lips" fill="#fff8ef"/></svg>
+      <div class="kiss-count-label">blessings sent</div>
+      <button class="kiss-btn" id="kissBtn" aria-label="Send love and blessings">
+        <svg viewBox="0 0 100 90" class="sticker" style="width:74px"><use href="#heart" fill="#fff8ef"/></svg>
       </button>
-      <p class="kiss-hint">Tap to send kisses &amp; hugs 💋🤗</p>
+      <p class="kiss-hint">Tap to send love, flowers &amp; blessings 🌹✨</p>
       <p class="kiss-milestone" id="kissMilestone"></p>
     </div>
   </div>
@@ -445,7 +445,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
         </div>
         <div class="env-front"></div>
         <div class="env-flap"></div>
-        <div class="seal" aria-hidden="true">💋</div>
+        <div class="seal" aria-hidden="true">❤️</div>
       </div>
       <p class="env-hint" id="envHint">Tap the seal to open</p>
     </div>
@@ -456,7 +456,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
           <h3 id="letterGreeting">My dearest love,</h3>
           <div id="letterBody"></div>
           <p class="sign" id="letterSign"></p>
-          <svg class="kiss-mark" viewBox="0 0 100 62" aria-hidden="true"><use href="#lips" class="lips"/></svg>
+          <span class="kiss-mark" aria-hidden="true" style="font-size:56px;width:auto">🌹</span>
         </article>
       </div>
     </div>
@@ -615,13 +615,13 @@ function sfx(kind){
    HERO — stickers, floating hearts, countdown
    ========================================================= */
 var STICKERS=[
-  {k:'lips', top:'12%', left:'6%',  w:96, r:-14},
-  {k:'hug',  top:'16%', left:'82%', w:78, r:10, e:'🤗'},
+  {k:'hug',  top:'12%', left:'6%',  w:84, r:-14, e:'🌹'},
+  {k:'hug',  top:'16%', left:'82%', w:78, r:10, e:'🎁'},
   {k:'heart',top:'70%', left:'6%',  w:62, r:12, cls:'hide-sm'},
-  {k:'lips', top:'78%', left:'78%', w:110,r:16},
-  {k:'hug',  top:'44%', left:'3%',  w:64, r:-8, e:'🫶', cls:'hide-sm'},
+  {k:'heart',top:'78%', left:'78%', w:96, r:16},
+  {k:'hug',  top:'44%', left:'3%',  w:64, r:-8, e:'🌸', cls:'hide-sm'},
   {k:'heart',top:'42%', left:'90%', w:48, r:-12,cls:'hide-sm'},
-  {k:'lips', top:'88%', left:'30%', w:70, r:-20,cls:'hide-sm'},
+  {k:'hug',  top:'88%', left:'30%', w:62, r:-20, e:'✨', cls:'hide-sm'},
   {k:'tape', top:'8%',  left:'58%', r:-18, cls:'hide-sm'}
 ];
 var hs=$('heroStickers');
@@ -662,12 +662,12 @@ if('IntersectionObserver' in window){
   var THEMES={
     memories:{pattern:1,tw:0,every:900,make:[
       ['up',function(){return heartSVG(pick(['rgba(229,56,59,.55)','rgba(255,143,163,.6)','rgba(212,167,74,.5)']))},12,34],
-      ['up',function(){return lipsSVG('rgba(193,18,31,.45)')},26,46]]},
+      ['up',function(){return sparkSVG(pick(['rgba(212,167,74,.6)','rgba(255,143,163,.6)']))},14,26]]},
     'cake-section':{pattern:0,tw:26,twColor:['#f3d28a','#fff3d6','#ffb3c1'],every:700,make:[
       ['up',function(){return '<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="'+pick(['rgba(243,210,138,.7)','rgba(255,179,193,.6)','rgba(255,255,255,.5)'])+'"/></svg>'},6,16],
       ['up',function(){return heartSVG(pick(['rgba(229,56,59,.7)','rgba(243,210,138,.6)']))},12,26]]},
     kisses:{pattern:1,tw:0,every:650,make:[
-      ['up',function(){return lipsSVG(pick(['rgba(229,56,59,.55)','rgba(193,18,31,.45)','rgba(255,77,109,.5)']))},26,52],
+      ['down',function(){return petalSVG(pick(['#ffb3c1','#ff8fa3','#e5383b']))},14,24,'petal'],
       ['up',function(){return heartSVG(pick(['rgba(229,56,59,.5)','rgba(255,143,163,.6)']))},14,30]]},
     letter:{pattern:0,tw:16,twColor:['#f3d28a','#fff3d6'],every:550,make:[
       ['down',function(){return petalSVG(pick(['#e5383b','#c1121f','#ff8fa3','#ff4d6d']))},14,26,'petal']]},
@@ -797,7 +797,7 @@ CONFIG.memories.forEach(function(m,i){
     back='<div class="face back"><div class="photo">'+(m.photo?'<img alt="" loading="lazy">':m.emoji)+'</div><h3></h3><p></p></div>';
   }
   card.innerHTML='<span class="tape"></span><div class="memory-inner" role="button" tabindex="0" aria-pressed="false">'+
-    '<div class="face front"><span class="num">No. '+(i+1)+'</span><svg viewBox="0 0 100 62" class="sticker"><use href="#lips" fill="#e5383b"/></svg>'+
+    '<div class="face front"><span class="num">No. '+(i+1)+'</span><svg viewBox="0 0 100 90" class="sticker" style="width:70px"><use href="#heart" fill="#e5383b"/></svg>'+
     '<strong>'+(m.type==='reason'?'A reason why':m.type==='voice'?'A secret whisper':'A memory')+'</strong><small>Tap to reveal</small></div>'+back+'</div>';
   card.querySelector('.back h3').textContent=m.title;
   card.querySelector('.back p').textContent=m.note;
@@ -906,11 +906,11 @@ $('micBtn').addEventListener('click',function(){
 });
 
 /* =========================================================
-   KISSES & HUGS
+   LOVE & BLESSINGS
    ========================================================= */
 var kissN=parseInt(store('love-affection-count'),10)||0;
 $('kissCount').textContent=kissN;
-var MILESTONES={1:'First kiss delivered 💋',10:'Ten! Someone is feeling loved 🥰',25:'25 — you are officially smothered 🤗',50:'50 kisses! My lips are tired, my heart is not ❤️',100:'100!! Forever is still not enough ♾️',250:'250… okay, you win. I love you more.'};
+var MILESTONES={1:'First blessing delivered 🌹',10:'Ten! May your days be full of smiles 😊',25:'25 — a whole garden of flowers for you 🌸',50:'50 blessings! May Allah keep you happy always 🤲',100:'100!! Forever is still not enough ♾️',250:'250… okay, you win. I love you more ❤️'};
 $('kissBtn').addEventListener('click',function(){
   kissN++; store('love-affection-count',String(kissN)); $('kissCount').textContent=kissN;
   if(MILESTONES[kissN]){ $('kissMilestone').textContent=MILESTONES[kissN]; burst(innerWidth/2,innerHeight/2,60,11); }
@@ -919,11 +919,10 @@ $('kissBtn').addEventListener('click',function(){
   var n=reduceMotion?2:7;
   for(var i=0;i<n;i++){
     var el=document.createElement('div'); el.className='fly sticker';
-    var kind=pick(['lips','lips','hug','heart']), w=Math.round(rand(38,74));
+    var kind=pick(['heart','heart','hug','hug']), w=Math.round(rand(38,74));
     el.style.left=ox+'px'; el.style.top=oy+'px'; el.style.width=w+'px';
-    if(kind==='lips') el.innerHTML=lipsSVG(pick(['#e5383b','#c1121f','#ff4d6d']));
-    else if(kind==='heart') el.innerHTML=heartSVG(pick(['#e5383b','#f3d28a','#ff8fa3']));
-    else el.innerHTML='<div class="hug-badge" style="width:'+w+'px;height:'+w+'px;font-size:'+(w*.55)+'px">'+pick(['🤗','🫶','🥰'])+'</div>';
+    if(kind==='heart') el.innerHTML=heartSVG(pick(['#e5383b','#f3d28a','#ff8fa3']));
+    else el.innerHTML='<div class="hug-badge" style="width:'+w+'px;height:'+w+'px;font-size:'+(w*.55)+'px">'+pick(['🌹','🌸','✨','🎁','🌷','⭐','🎈'])+'</div>';
     layer.appendChild(el);
     var dx=rand(-innerWidth*.55,innerWidth*.55), dy=rand(-innerHeight*.9,-innerHeight*.25), rot=rand(-60,60);
     if(el.animate){
