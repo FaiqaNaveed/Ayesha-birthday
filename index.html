@@ -238,6 +238,31 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .wish-empty{grid-column:1/-1;text-align:center;padding:50px 20px;border:2px dashed #ecd2c4;border-radius:20px;color:var(--muted)}
 @keyframes pop{from{transform:scale(.6);opacity:0}}
 
+/* ---------- animated section backgrounds ---------- */
+.section > .wrap{position:relative;z-index:1}
+.sec-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.sec-bg .glow{position:absolute;width:46vmax;height:46vmax;border-radius:50%;filter:blur(60px);opacity:.55;animation:glowDrift 22s ease-in-out infinite alternate}
+.sec-bg .glow.g1{top:-18vmax;left:-14vmax;background:radial-gradient(circle,#ffb3c1,transparent 65%)}
+.sec-bg .glow.g2{bottom:-20vmax;right:-14vmax;background:radial-gradient(circle,#f3d28a,transparent 65%);animation-duration:27s;animation-delay:-8s}
+.sec-bg .glow.g3{top:35%;left:40%;width:30vmax;height:30vmax;background:radial-gradient(circle,#ff8fa3,transparent 65%);opacity:.35;animation-duration:31s;animation-delay:-15s}
+.dark .sec-bg .glow.g1{background:radial-gradient(circle,#e5383b,transparent 65%);opacity:.35}
+.dark .sec-bg .glow.g2{background:radial-gradient(circle,#d4a74a,transparent 65%);opacity:.22}
+.dark .sec-bg .glow.g3{background:radial-gradient(circle,#ff4d6d,transparent 65%);opacity:.2}
+@keyframes glowDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8vmax,6vmax) scale(1.15)}100%{transform:translate(-6vmax,10vmax) scale(.9)}}
+.sec-bg .hpattern{position:absolute;inset:-120px;opacity:.07;animation:patternPan 40s linear infinite;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M30 44c-6-10-22-8-22 5 0 12 22 24 22 24s22-12 22-24c0-13-16-15-22-5z' fill='%23c1121f'/%3E%3Cpath d='M90 104c-4-7-15-6-15 3 0 8 15 16 15 16s15-8 15-16c0-9-11-10-15-3z' fill='%23d4a74a'/%3E%3C/svg%3E");background-size:120px 120px}
+.dark .sec-bg .hpattern{opacity:.06}
+@keyframes patternPan{to{transform:translate(120px,120px)}}
+.sec-bg .p{position:absolute;opacity:0;will-change:transform,opacity}
+.sec-bg .p svg{width:100%;display:block}
+.sec-bg .p.up{bottom:-50px;animation:bgUp linear forwards}
+.sec-bg .p.down{top:-50px;animation:bgDown linear forwards}
+@keyframes bgUp{0%{transform:translate(0,0) rotate(0);opacity:0}12%{opacity:var(--o,.7)}85%{opacity:var(--o,.7)}100%{transform:translate(var(--drift,30px),calc(-1 * var(--dist,800px))) rotate(var(--spin,40deg));opacity:0}}
+@keyframes bgDown{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:var(--o,.8)}85%{opacity:var(--o,.8)}100%{transform:translate(var(--drift,60px),var(--dist,800px)) rotate(var(--spin,260deg));opacity:0}}
+.sec-bg .petal{animation-timing-function:cubic-bezier(.45,.05,.55,.95)}
+.sec-bg .tw{position:absolute;animation:twinkle 3s ease-in-out infinite;opacity:0}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:var(--o,.9);transform:scale(1) rotate(45deg)}}
+
 footer{background:var(--night);color:#e9bfb4;text-align:center;padding:40px 20px;font-size:.9rem}
 footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-weight:600}
 
@@ -628,6 +653,61 @@ if(!reduceMotion){ for(var i=0;i<8;i++) setTimeout(spawnHeart,i*250); setInterva
 if('IntersectionObserver' in window){
   new IntersectionObserver(function(e){heroVisible=e[0].isIntersecting}).observe($('top'));
 }
+
+/* ---------- animated love backgrounds for every section ---------- */
+(function sectionBackgrounds(){
+  function petalSVG(c){return '<svg viewBox="0 0 40 50"><path d="M20 2C34 12 38 30 20 48 2 30 6 12 20 2z" fill="'+c+'"/><path d="M20 6v38" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/></svg>'}
+  function sparkSVG(c){return '<svg viewBox="0 0 40 40"><path d="M20 0C22 14 26 18 40 20 26 22 22 26 20 40 18 26 14 22 0 20 14 18 18 14 20 0z" fill="'+c+'"/></svg>'}
+  function lipsSVG(c){return '<svg viewBox="0 0 100 62"><use href="#lips" fill="'+c+'"/></svg>'}
+  var THEMES={
+    memories:{pattern:1,tw:0,every:900,make:[
+      ['up',function(){return heartSVG(pick(['rgba(229,56,59,.55)','rgba(255,143,163,.6)','rgba(212,167,74,.5)']))},12,34],
+      ['up',function(){return lipsSVG('rgba(193,18,31,.45)')},26,46]]},
+    'cake-section':{pattern:0,tw:26,twColor:['#f3d28a','#fff3d6','#ffb3c1'],every:700,make:[
+      ['up',function(){return '<svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="'+pick(['rgba(243,210,138,.7)','rgba(255,179,193,.6)','rgba(255,255,255,.5)'])+'"/></svg>'},6,16],
+      ['up',function(){return heartSVG(pick(['rgba(229,56,59,.7)','rgba(243,210,138,.6)']))},12,26]]},
+    kisses:{pattern:1,tw:0,every:650,make:[
+      ['up',function(){return lipsSVG(pick(['rgba(229,56,59,.55)','rgba(193,18,31,.45)','rgba(255,77,109,.5)']))},26,52],
+      ['up',function(){return heartSVG(pick(['rgba(229,56,59,.5)','rgba(255,143,163,.6)']))},14,30]]},
+    letter:{pattern:0,tw:16,twColor:['#f3d28a','#fff3d6'],every:550,make:[
+      ['down',function(){return petalSVG(pick(['#e5383b','#c1121f','#ff8fa3','#ff4d6d']))},14,26,'petal']]},
+    wishes:{pattern:1,tw:0,every:600,make:[
+      ['down',function(){return petalSVG(pick(['#ffb3c1','#ff8fa3','#e5383b']))},14,24,'petal'],
+      ['up',function(){return heartSVG(pick(['rgba(229,56,59,.5)','rgba(212,167,74,.55)']))},12,26]]}
+  };
+  Object.keys(THEMES).forEach(function(id){
+    var sec=$(id); if(!sec) return;
+    var t=THEMES[id], bg=document.createElement('div'); bg.className='sec-bg'; bg.setAttribute('aria-hidden','true');
+    bg.innerHTML='<span class="glow g1"></span><span class="glow g2"></span><span class="glow g3"></span>'+(t.pattern?'<span class="hpattern"></span>':'');
+    for(var i=0;i<t.tw;i++){
+      var s=document.createElement('span'), sz=rand(8,22); s.className='tw';
+      s.style.cssText='left:'+rand(2,98)+'%;top:'+rand(2,98)+'%;width:'+sz+'px;animation-delay:'+(-rand(0,3))+'s;animation-duration:'+rand(2.2,4.5)+'s';
+      s.innerHTML=sparkSVG(pick(t.twColor)); bg.appendChild(s);
+    }
+    sec.insertBefore(bg,sec.firstChild);
+    if(reduceMotion) return;
+    var visible=false, live=0;
+    function spawn(){
+      if(!visible||document.hidden||live>22) return;
+      var m=pick(t.make), p=document.createElement('span'), sz=rand(m[2],m[3]), h=sec.offsetHeight;
+      p.className='p '+m[0]+(m[4]?' '+m[4]:'');
+      p.style.left=rand(0,98)+'%'; p.style.width=sz+'px';
+      p.style.setProperty('--dist',(h+120)+'px');
+      p.style.setProperty('--drift',rand(-120,120)+'px');
+      p.style.setProperty('--spin',(m[0]==='down'?rand(180,540):rand(-50,50))+'deg');
+      p.style.setProperty('--o',rand(.5,.9).toFixed(2));
+      p.style.animationDuration=rand(9,16)+'s';
+      p.innerHTML=m[1]();
+      live++; bg.appendChild(p);
+      p.addEventListener('animationend',function(){live--;p.remove()});
+    }
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){visible=e[0].isIntersecting},{rootMargin:'100px'}).observe(sec);
+    } else visible=true;
+    for(var k=0;k<6;k++) setTimeout(spawn,k*200);
+    setInterval(spawn,t.every);
+  });
+})();
 
 var bd=CONFIG.birthday.split('-').map(Number);
 function pad(n){return (n<10?'0':'')+n}
