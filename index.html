@@ -230,6 +230,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .wish-note:nth-child(4n){background:#fbe7ef;rotate:1.8deg}
 .wish-note .tape{top:-12px;left:50%;translate:-50% 0;width:70px;height:22px}
 .wish-note p{font-family:var(--hand);font-size:1.4rem;line-height:1.2;color:var(--ink);overflow-wrap:anywhere}
+.wish-note .pin{position:absolute;top:4px;right:8px;font-size:1.1rem}
 .wish-del{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;font-size:.75rem;color:var(--muted);background:rgba(255,255,255,.6);opacity:.55;transition:opacity .2s,background .2s}
 .wish-del:hover,.wish-del:focus-visible{opacity:1;background:#fff;color:var(--crimson)}
 .wish-note .by{display:block;margin-top:10px;font-size:.8rem;font-weight:700;color:var(--crimson)}
@@ -493,6 +494,12 @@ var CONFIG = {
       note:'The way you take care of everyone around you, and still remember exactly how I like my tea.' },
     { type:'photo',  emoji:'🏡', photo:'', title:'Our someday',
       note:'Slow Sunday mornings, a little home full of laughter, and you. That is the whole dream.' }
+  ],
+  // always pinned to the wishing wall, cannot be removed
+  pinnedWishes: [
+    { n:'Azhar', m:'Love you yaara, mera bacha ❤️ May Allah bless you more and more.' },
+    { n:'Azhar', m:'May every year of yours be happier than the last — and may I be beside you for all of them. Happy birthday, jaan 🎂' },
+    { n:'Azhar', m:'Keep smiling the way you did the day we met. That smile is my favourite place in the world 🌹' }
   ],
   letterGreeting: 'My dearest love,',
   letter: [
@@ -889,7 +896,14 @@ var WKEY='love-birthday-wishes', wishes=[];
 try{ wishes=JSON.parse(store(WKEY)||'[]'); if(!Array.isArray(wishes)) wishes=[]; }catch(e){ wishes=[] }
 function renderWishes(){
   var wall=$('wishWall'); wall.innerHTML='';
-  if(!wishes.length){ wall.innerHTML='<div class="wish-empty">💌<br>The wall is waiting for its first wish.</div>'; return; }
+  var pinned=CONFIG.pinnedWishes||[];
+  if(!wishes.length && !pinned.length){ wall.innerHTML='<div class="wish-empty">💌<br>The wall is waiting for its first wish.</div>'; return; }
+  pinned.forEach(function(w){
+    var n=document.createElement('div'); n.className='wish-note pinned';
+    n.innerHTML='<span class="tape"></span><span class="pin" aria-hidden="true">📌</span><p></p><span class="by"></span>';
+    n.querySelector('p').textContent=w.m; n.querySelector('.by').textContent='— '+w.n+' ♥';
+    wall.appendChild(n);
+  });
   wishes.slice().reverse().forEach(function(w){
     var n=document.createElement('div'); n.className='wish-note';
     n.innerHTML='<span class="tape"></span><button class="wish-del" type="button" title="Remove this wish">✕</button><p></p><span class="by"></span>';
