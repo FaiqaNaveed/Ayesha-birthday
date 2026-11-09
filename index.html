@@ -479,8 +479,8 @@ var CONFIG = {
   from: 'Love, Azhar',        // how the letter and footer are signed
   birthday: '11-09',          // MM-DD — drives the countdown
   memories: [
-    { type:'photo',  emoji:'🎶', photo:'', title:'Our song',
-      note:'Every time it plays, wherever I am, I am right back in your arms — dancing badly and laughing even louder.' },
+    { type:'note',   title:'The first time we met',
+      note:'The first time we saw each other, you were in a red shirt. I still remember that smile.' },
     { type:'reason', title:'Reason #1',
       note:'Your laugh. The real one, the one you try to hide. It is my favourite sound in the whole world.' },
     { type:'voice',  title:'A secret voice note', audio:'',
@@ -714,8 +714,8 @@ function updateMemProgress(){
 CONFIG.memories.forEach(function(m,i){
   var card=document.createElement('div'); card.className='memory reveal';
   var back;
-  if(m.type==='reason'){
-    back='<div class="face back reason"><div class="big-heart">💗</div><h3></h3><p></p></div>';
+  if(m.type==='reason'||m.type==='note'){
+    back='<div class="face back reason"><div class="big-heart">'+(m.type==='note'?'❤️':'💗')+'</div><h3></h3><p></p></div>';
   } else if(m.type==='voice'){
     back='<div class="face back voice"><div class="photo">🎙️</div><h3></h3>'+
          '<div class="wave">'+new Array(17).join('<i></i>')+'</div><p></p><button class="voice-btn" type="button">▶ Play</button></div>';
