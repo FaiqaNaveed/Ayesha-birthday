@@ -473,8 +473,8 @@ var CONFIG = {
   from: 'yours, always',      // how the letter and footer are signed
   birthday: '11-09',          // MM-DD — drives the countdown
   memories: [
-    { type:'photo',  emoji:'☕', photo:'', title:'The day we met',
-      note:'I still remember how nervous I was — and how you made it feel like we had known each other forever.' },
+    { type:'photo',  emoji:'🎶', photo:'', title:'Our song',
+      note:'Every time it plays, wherever I am, I am right back in your arms — dancing badly and laughing even louder.' },
     { type:'reason', title:'Reason #1',
       note:'Your laugh. The real one, the one you try to hide. It is my favourite sound in the whole world.' },
     { type:'voice',  title:'A secret voice note', audio:'',
@@ -692,6 +692,16 @@ document.addEventListener('pointerdown',function(e){
    MEMORY LANE
    ========================================================= */
 var grid=$('memoryGrid'), opened=0, total=CONFIG.memories.length;
+/* pick a female voice for the voice note (names differ per browser / OS) */
+var FEMALE=/female|woman|zira|aria|jenny|michelle|emma|ava|sonia|libby|natasha|clara|samantha|victoria|karen|moira|tessa|fiona|susan|hazel|serena|allison|kate|veena|heera|neerja|google us english|google uk english female/i;
+var MALE=/\bmale\b|david|mark|guy|ryan|daniel|george|james|alex|fred|ravi|prabhat|thomas/i;
+function femaleVoice(){
+  if(!window.speechSynthesis) return null;
+  var v=speechSynthesis.getVoices().filter(function(x){return /^en/i.test(x.lang)});
+  return v.filter(function(x){return FEMALE.test(x.name)&&!/\bmale\b/i.test(x.name.replace(/female/i,''))})[0]
+      || v.filter(function(x){return !MALE.test(x.name)})[0] || null;
+}
+if(window.speechSynthesis){ speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged=function(){speechSynthesis.getVoices()}; }
 function updateMemProgress(){
   $('memProgress').textContent = opened===total ? 'All '+total+' unlocked — you know all my secrets now ♥' : opened+' of '+total+' unlocked';
 }
@@ -735,7 +745,7 @@ CONFIG.memories.forEach(function(m,i){
       if(playing){ if(audio){audio.pause();audio.currentTime=0} if(window.speechSynthesis) speechSynthesis.cancel(); stopVoice(); return; }
       playing=true; wave.classList.add('playing'); vb.textContent='■ Stop';
       if(m.audio){ audio=audio||new Audio(m.audio); audio.onended=stopVoice; audio.play().catch(stopVoice); }
-      else if(window.speechSynthesis){ var u=new SpeechSynthesisUtterance(m.note); u.rate=.88; u.pitch=1.05; u.onend=stopVoice; u.onerror=stopVoice; speechSynthesis.cancel(); speechSynthesis.speak(u); }
+      else if(window.speechSynthesis){ var u=new SpeechSynthesisUtterance(m.note), fv=femaleVoice(); u.rate=.9; u.pitch=fv?1.1:1.35; if(fv){u.voice=fv;u.lang=fv.lang} u.onend=stopVoice; u.onerror=stopVoice; speechSynthesis.cancel(); speechSynthesis.speak(u); }
       else { setTimeout(stopVoice,3000); }
     });
   }
