@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Happy Birthday, My Love</title>
+<title>Happy Birthday, Azhar</title>
 <meta name="description" content="A little birthday journey, made with love — memories, candles, kisses and a letter.">
-<meta property="og:title" content="Happy Birthday, My Love! 💋">
+<meta property="og:title" content="Happy Birthday, Azhar! 💋">
 <meta property="og:description" content="Memories to unlock, candles to blow out, and a letter just for you.">
 <meta name="theme-color" content="#370617">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>">
@@ -222,7 +222,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--crimson);box-shadow:0 0 0 4px rgba(193,18,31,.12)}
 .wish-form .btn{width:100%;justify-content:center}
 .wish-form .form-note{font-size:.78rem;color:var(--muted);margin:10px 0 0;text-align:center}
-.wish-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.wish-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;max-width:900px;margin:0 auto}
+.wish-wall .wish-note p{font-size:1.6rem}
 .wish-note{position:relative;padding:26px 18px 18px;border-radius:4px;box-shadow:0 10px 24px rgba(55,6,23,.12);animation:pop .5s cubic-bezier(.2,1.4,.4,1)}
 .wish-note:nth-child(4n+1){background:#fff1e6;rotate:-1.5deg}
 .wish-note:nth-child(4n+2){background:#ffe3e0;rotate:1.2deg}
@@ -253,6 +254,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
   .cake-actions{justify-content:center}
   .mic-meter{margin-left:auto;margin-right:auto}
   .section{padding:76px 0}
+  .hero-stickers .hide-sm{display:none}
 }
 @media (max-width:560px){
   .wrap{padding:0 16px}
@@ -307,7 +309,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
   <div class="hero-stickers" id="heroStickers" aria-hidden="true"></div>
   <div class="hero-inner wrap">
     <p class="eyebrow">✦ A little journey, just for you ✦</p>
-    <h1>Happy Birthday,<em id="heroName">My Love!</em></h1>
+    <h1>Happy Birthday,<em id="heroName">Azhar!</em></h1>
     <p class="hero-sub">Every heartbeat of mine has your name in it. Today we celebrate the best thing that ever happened to me — you.</p>
     <div class="countdown" id="countdown">
       <div class="cd-box"><b id="cdD">0</b><span>Days</span></div>
@@ -441,27 +443,10 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow">Chapter five</p>
-      <h2>The Wishing <em>Box</em></h2>
-      <p>Friends and family — drop a birthday wish in the box. Every note gets pinned to the wall.</p>
+      <h2>My Wishes <em>for You</em></h2>
+      <p>Three little wishes from my heart, pinned here just for you.</p>
     </div>
-    <div class="wish-layout">
-      <form class="wish-form reveal" id="wishForm" novalidate>
-        <span class="tape"></span>
-        <h3>Leave a wish 💌</h3>
-        <p>A few kind words go a very long way.</p>
-        <div class="field">
-          <label for="wishName">Your name</label>
-          <input id="wishName" name="name" maxlength="40" autocomplete="name" placeholder="e.g. Sara" required>
-        </div>
-        <div class="field">
-          <label for="wishMsg">Your wish</label>
-          <textarea id="wishMsg" name="message" maxlength="280" placeholder="Happy birthday! May this year…" required></textarea>
-        </div>
-        <button class="btn btn-crimson" type="submit">Pin my wish ♥</button>
-        <p class="form-note" id="formNote">Wishes are saved on this device.</p>
-      </form>
-      <div class="wish-wall" id="wishWall" aria-live="polite"></div>
-    </div>
+    <div class="wish-wall reveal" id="wishWall"></div>
   </div>
 </section>
 </main>
@@ -478,7 +463,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
    ✏️  EDIT EVERYTHING PERSONAL HERE
    ===================================================================== */
 var CONFIG = {
-  name: 'My Love',            // big title: "Happy Birthday, <name>!"
+  name: 'Azhar',              // big title: "Happy Birthday, <name>!"
   from: 'Love, Faiqa',        // how the letter and footer are signed
   birthday: '11-09',          // MM-DD — drives the countdown
   memories: [
@@ -890,42 +875,17 @@ env.addEventListener('click',openEnvelope);
 env.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope()}});
 
 /* =========================================================
-   WISHING BOX (saved in this browser)
+   MY WISHES (fixed, from CONFIG.pinnedWishes)
    ========================================================= */
-var WKEY='love-birthday-wishes', wishes=[];
-try{ wishes=JSON.parse(store(WKEY)||'[]'); if(!Array.isArray(wishes)) wishes=[]; }catch(e){ wishes=[] }
-function renderWishes(){
-  var wall=$('wishWall'); wall.innerHTML='';
-  var pinned=CONFIG.pinnedWishes||[];
-  if(!wishes.length && !pinned.length){ wall.innerHTML='<div class="wish-empty">💌<br>The wall is waiting for its first wish.</div>'; return; }
-  pinned.forEach(function(w){
+(function renderWishes(){
+  var wall=$('wishWall');
+  (CONFIG.pinnedWishes||[]).forEach(function(w){
     var n=document.createElement('div'); n.className='wish-note pinned';
     n.innerHTML='<span class="tape"></span><span class="pin" aria-hidden="true">📌</span><p></p><span class="by"></span>';
     n.querySelector('p').textContent=w.m; n.querySelector('.by').textContent='— '+w.n+' ♥';
     wall.appendChild(n);
   });
-  wishes.slice().reverse().forEach(function(w){
-    var n=document.createElement('div'); n.className='wish-note';
-    n.innerHTML='<span class="tape"></span><button class="wish-del" type="button" title="Remove this wish">✕</button><p></p><span class="by"></span>';
-    n.querySelector('p').textContent=w.m; n.querySelector('.by').textContent='— '+w.n;
-    n.querySelector('.wish-del').setAttribute('aria-label','Remove the wish from '+w.n);
-    n.querySelector('.wish-del').addEventListener('click',function(){
-      if(!confirm('Remove this wish?')) return;
-      wishes.splice(wishes.indexOf(w),1); store(WKEY,JSON.stringify(wishes)); renderWishes();
-    });
-    wall.appendChild(n);
-  });
-}
-renderWishes();
-$('wishForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var name=$('wishName').value.trim(), msg=$('wishMsg').value.trim(), note=$('formNote');
-  if(!name||!msg){ note.textContent='Please add your name and a wish 💕'; note.style.color='#c1121f'; (name?$('wishMsg'):$('wishName')).focus(); return; }
-  wishes.push({n:name.slice(0,40),m:msg.slice(0,280),t:Date.now()}); store(WKEY,JSON.stringify(wishes));
-  renderWishes(); this.reset();
-  note.style.color=''; note.textContent='Pinned! Thank you for the love ♥';
-  var r=this.getBoundingClientRect(); burst(r.left+r.width/2,r.top+40,40,8); sfx('kiss');
-});
+})();
 
 /* =========================================================
    SCROLL REVEAL

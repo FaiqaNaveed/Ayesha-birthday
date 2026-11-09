@@ -19,9 +19,8 @@ effects are synthesised in the browser, so there are no audio files.
 4. **Kisses & Hugs** — every tap sends kiss and hug stickers flying across the
    screen and adds to the counter (remembered in the browser), with milestones.
 5. **Love Letter** — a sealed envelope that opens to a full letter.
-6. **Wishing Box** — a form that pins wishes to a sticky-note wall.
-   Wishes are stored in that visitor's own browser (`localStorage`), so each
-   person sees only the wishes made on their device.
+6. **My Wishes for You** — three fixed wishes from Faiqa, pinned as sticky notes
+   (edit them in `pinnedWishes` in `CONFIG`).
 
 ## Personalising it
 
