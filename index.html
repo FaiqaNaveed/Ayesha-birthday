@@ -187,6 +187,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .env-back{position:absolute;inset:0;border-radius:10px;background:linear-gradient(160deg,#7d0613,#4a0410)}
 .env-letter{position:absolute;left:6%;right:6%;top:6%;height:88%;z-index:2;background:var(--paper);border-radius:6px;padding:22px;text-align:center;transition:transform .9s cubic-bezier(.2,.8,.2,1) .45s;box-shadow:0 4px 12px rgba(0,0,0,.2)}
 .env-letter p{font-family:var(--hand);font-size:1.7rem;color:var(--velvet);margin-top:4%}
+.env-letter .env-lines{font-size:1.25rem;line-height:1.25;color:var(--ink);margin-top:10px}
+@media (max-width:560px){.env-letter{padding:14px}.env-letter p{font-size:1.4rem}.env-letter .env-lines{font-size:1.05rem}}
 .env-front{position:absolute;inset:0;z-index:3;border-radius:10px;background:linear-gradient(170deg,var(--crimson),#8f0b17);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
 .env-flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;transform-origin:50% 0;background:linear-gradient(180deg,#a10d1a,var(--crimson));clip-path:polygon(0 0,100% 0,50% 100%);transition:transform .7s cubic-bezier(.4,0,.2,1),z-index 0s .35s;border-radius:10px 10px 0 0}
 .seal{position:absolute;left:50%;top:58%;translate:-50% -50%;z-index:5;width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;
@@ -406,7 +408,11 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
     <div class="reveal">
       <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-controls="letterFull" aria-label="Open the love letter">
         <div class="env-back"></div>
-        <div class="env-letter"><p>To my love ♥</p></div>
+        <div class="env-letter">
+          <p>To my love ♥</p>
+          <p class="env-lines">Happy birthday to the one who makes every ordinary day feel like magic. I love you more than words can hold…</p>
+          <p class="env-lines" style="color:var(--crimson);margin-top:2px">— Love, Azhar</p>
+        </div>
         <div class="env-front"></div>
         <div class="env-flap"></div>
         <div class="seal" aria-hidden="true">💋</div>
@@ -470,7 +476,7 @@ footer b{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-wei
    ===================================================================== */
 var CONFIG = {
   name: 'My Love',            // big title: "Happy Birthday, <name>!"
-  from: 'yours, always',      // how the letter and footer are signed
+  from: 'Love, Azhar',        // how the letter and footer are signed
   birthday: '11-09',          // MM-DD — drives the countdown
   memories: [
     { type:'photo',  emoji:'🎶', photo:'', title:'Our song',
@@ -514,7 +520,7 @@ $('heroName').textContent = CONFIG.name + '!';
 $('footerFrom').textContent = CONFIG.from;
 $('letterGreeting').textContent = CONFIG.letterGreeting;
 CONFIG.letter.forEach(function(t){var p=document.createElement('p');p.textContent=t;$('letterBody').appendChild(p)});
-$('letterSign').textContent = '— ' + CONFIG.from + ' ♥';
+$('letterSign').textContent = CONFIG.from + ' ♥';
 
 /* =========================================================
    AUDIO — a soft synthesised music-box loop (no files)
