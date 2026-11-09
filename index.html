@@ -230,6 +230,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .wish-note:nth-child(4n){background:#fbe7ef;rotate:1.8deg}
 .wish-note .tape{top:-12px;left:50%;translate:-50% 0;width:70px;height:22px}
 .wish-note p{font-family:var(--hand);font-size:1.4rem;line-height:1.2;color:var(--ink);overflow-wrap:anywhere}
+.wish-del{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;font-size:.75rem;color:var(--muted);background:rgba(255,255,255,.6);opacity:.55;transition:opacity .2s,background .2s}
+.wish-del:hover,.wish-del:focus-visible{opacity:1;background:#fff;color:var(--crimson)}
 .wish-note .by{display:block;margin-top:10px;font-size:.8rem;font-weight:700;color:var(--crimson)}
 .wish-empty{grid-column:1/-1;text-align:center;padding:50px 20px;border:2px dashed #ecd2c4;border-radius:20px;color:var(--muted)}
 @keyframes pop{from{transform:scale(.6);opacity:0}}
@@ -890,8 +892,13 @@ function renderWishes(){
   if(!wishes.length){ wall.innerHTML='<div class="wish-empty">💌<br>The wall is waiting for its first wish.</div>'; return; }
   wishes.slice().reverse().forEach(function(w){
     var n=document.createElement('div'); n.className='wish-note';
-    n.innerHTML='<span class="tape"></span><p></p><span class="by"></span>';
+    n.innerHTML='<span class="tape"></span><button class="wish-del" type="button" title="Remove this wish">✕</button><p></p><span class="by"></span>';
     n.querySelector('p').textContent=w.m; n.querySelector('.by').textContent='— '+w.n;
+    n.querySelector('.wish-del').setAttribute('aria-label','Remove the wish from '+w.n);
+    n.querySelector('.wish-del').addEventListener('click',function(){
+      if(!confirm('Remove this wish?')) return;
+      wishes.splice(wishes.indexOf(w),1); store(WKEY,JSON.stringify(wishes)); renderWishes();
+    });
     wall.appendChild(n);
   });
 }
