@@ -12,7 +12,7 @@ effects are synthesised in the browser, so there are no audio files.
 
 1. **Hero** — "Happy Birthday, My Love!", floating heart/rose/flower stickers, rising
    hearts, a live countdown, a music toggle and a *Start the Journey* button.
-2. **Memory Lane** — six polaroid cards that flip to reveal a memory, a
+2. **Our Sweet Memories** — six polaroid cards that flip to reveal a memory, a
    reason why, or a secret voice note.
 3. **Make a Wish** — an SVG cake with five flickering candles. Blow into the
    microphone, or tap each flame; the last one sets off a heart-confetti blast.
