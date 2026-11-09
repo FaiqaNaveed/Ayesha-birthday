@@ -1,47 +1,50 @@
-# Happy Birthday, Ayesha 🎂💜
+# Happy Birthday, My Love 💋
 
-A one-page birthday surprise for Ayesha (21 September), from her big sister Faiqa.
+A single-page romantic birthday journey — crimson, velvet red, cream and a
+touch of gold, with lipstick-kiss and hug stickers, glossy tape and floating
+hearts.
 
-Single self-contained `index.html` — no build step, no dependencies, works offline.
-Just open the file, or serve the folder statically.
+Everything lives in one self-contained `index.html` — no build step and no
+dependencies (only Google Fonts is loaded from the web). The music and sound
+effects are synthesised in the browser, so there are no audio files.
 
 ## What's in it
 
-- White + purple cute theme: rounded comic lettering, dashed chunky borders,
-  wobbling headings and floating emoji sparkles (✨💜🦄🍭) with purple balloons
-- Six gift cards, each opening a different surprise:
-  1. **Confetti storm** — canvas confetti burst + a flip-open envelope
-  2. **Cake & candles** — tap each of the three flames to blow them out
-  3. **Fireworks & letter** — a letter that types itself out
-  4. **Scratch card** — drag to scratch the purple foil off a hidden message
-  5. **Fortune cookies** — tap for a random note, drawn without repeats
-  6. **Balloon pop** — pop six balloons to spell out A-Y-E-S-H-A
-- A little-sister section, and a finale banner once all six are unwrapped
+1. **Hero** — "Happy Birthday, My Love!", floating kiss/hug stickers, rising
+   hearts, a live countdown, a music toggle and a *Start the Journey* button.
+2. **Memory Lane** — six polaroid cards that flip to reveal a memory, a
+   reason why, or a secret voice note.
+3. **Make a Wish** — an SVG cake with five flickering candles. Blow into the
+   microphone, or tap each flame; the last one sets off a heart-confetti blast.
+4. **Kisses & Hugs** — every tap sends kiss and hug stickers flying across the
+   screen and adds to the counter (remembered in the browser), with milestones.
+5. **Love Letter** — a sealed envelope that opens to a full letter.
+6. **Wishing Box** — a form that pins wishes to a sticky-note wall.
+   Wishes are stored in that visitor's own browser (`localStorage`), so each
+   person sees only the wishes made on their device.
+
+## Personalising it
+
+All the personal text is in the `CONFIG` object at the top of the script in
+`index.html`:
+
+- `name` — the name in the big title (default `My Love`)
+- `from` — how the letter and footer are signed
+- `birthday` — `MM-DD`, drives the countdown (on the day itself it counts
+  down the rest of the birthday)
+- `memories` — the six cards. For a real photo, put the image in a `photos/`
+  folder and set `photo: 'photos/our-first-date.jpg'`. For the voice card,
+  set `audio: 'voice/note.mp3'` to play your own recording; without it the
+  browser reads the note aloud.
+- `letterGreeting` and `letter` — the letter, one string per paragraph
+
+Colours are the CSS custom properties in `:root` plus the `PALETTE` array in
+the script (confetti colours).
 
 ## Deploy
 
 Static site, no framework. On Vercel: no build command, output directory `.`
-(root). Everything lives in `index.html`.
+(root). Pushing to `main` redeploys.
 
-## Editing the words
-
-The personal wording is all in `index.html`:
-
-- Envelope message and letter text — search for `Dear Ayesha,`
-- Fortune cookie notes — the `WISHES` array in scene `'5'`
-- Scratch card message — the `.scratch-under` div in scene `'4'`
-- Little-sister cards — the `.bff-card` blocks
-- Keepsake note — the `.bff-seal` block
-
-## Adding another surprise
-
-Add a `<button class="gift gN" data-scene="N">` to the `.gifts` grid and a
-matching `'N':function(){…}` entry in the `scenes` object. The progress counter
-and the finale read the gift count from the markup, so nothing else needs
-touching.
-
-## Editing the colours
-
-Every colour comes from the CSS custom properties in `:root` (`--purple`,
-`--grape`, `--lilac`, `--line`, `--ink`…), plus the `PALETTE` array in the
-script, which drives the confetti, fireworks and balloons.
+The microphone needs HTTPS, which Vercel provides; locally it works on
+`localhost`.
